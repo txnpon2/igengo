@@ -1,0 +1,22 @@
+# รันโหมดพัฒนา:  docker compose up --build
+# ตอนนี้มีเฉพาะหน้าบ้าน — เมื่อทำ Strapi เสร็จ ให้เพิ่ม service เข้ามา
+# หรือต่อเข้า network เดียวกับ PostgreSQL ที่คุณรันอยู่แล้ว (ดูส่วน networks ด้านล่าง)
+services:
+  web:
+    build:
+      context: .
+      target: base
+    command: npm run dev -- --host 0.0.0.0
+    ports:
+      - "3000:3000"
+    environment:
+      NUXT_PUBLIC_STRAPI_URL: ${NUXT_PUBLIC_STRAPI_URL:-}
+    volumes:
+      - .:/app
+      - /app/node_modules
+    # networks: [backend]
+
+# networks:
+#   backend:
+#     external: true
+#     name: ชื่อ-network-ของ-postgres-ที่มีอยู่

@@ -1,0 +1,26 @@
+export default defineNuxtConfig({
+  compatibilityDate: '2025-01-01',
+  devtools: { enabled: false },
+  typescript: { strict: true },
+  modules: ['@nuxtjs/tailwindcss'],
+  css: ['~/assets/css/main.css'],
+
+  // เว้นว่าง = ใช้ข้อมูลจำลองใน data/mock.ts
+  // ตั้ง NUXT_PUBLIC_STRAPI_URL=http://strapi:1337 เมื่อหลังบ้านพร้อม
+  runtimeConfig: { public: { strapiUrl: '' } },
+
+  app: {
+    head: {
+      htmlAttrs: { lang: 'th' },
+      titleTemplate: (t?: string) => (t ? `${t} | IGENCO` : 'บริษัท ไอเจนโก้ จำกัด | Enterprise Software & IT Consulting'),
+      link: [
+        { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
+        { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
+        {
+          rel: 'stylesheet',
+          href: 'https://fonts.googleapis.com/css2?family=Prompt:wght@400;500;600;700&family=Sarabun:wght@400;500;600;700&display=swap',
+        },
+      ],
+    },
+  },
+})
