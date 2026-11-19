@@ -24,7 +24,16 @@ export const useContent = () => {
     )
 
   const getProduct = async (slug: string) => (await getProducts()).find((p) => p.slug === slug) ?? null
-  const getPost = async (slug: string) => (await getPosts()).find((p) => p.slug === slug) ?? null
+  const getPost = async (slug: string) => {
+    const list = await getPosts()
+    return (
+      list.find((p) => p.slug === slug) ??
+      (slug === 'iso-29110-renewal'
+        ? list.find((p) => p.slug === 'genco-iso-iec-29110-certification')
+        : null) ??
+      null
+    )
+  }
 
   const formatDate = (iso: string) =>
     new Date(iso).toLocaleDateString('th-TH', { day: 'numeric', month: 'long', year: 'numeric' })

@@ -186,6 +186,71 @@ export const products: Product[] = [
 
 export const posts: Post[] = [
   {
+    slug: 'genco-iso-iec-29110-certification',
+    category: 'ข่าวองค์กร',
+    badge: 'ISO/IEC 29110',
+    publishedAt: '2026-11-19',
+    author: 'นายสำเริง คงสุดี',
+    authorRole: 'ผู้แต่ง / บริษัท ไอเจนโก้ จำกัด',
+    title: 'GENCO ผ่านการรับรองมาตรฐาน ISO/IEC กระบวนการด้านการบริหารโครงการและกระบวนการด้านการสร้างซอฟต์แวร์',
+    subtitle: 'ยกระดับมาตรฐานคุณภาพสู่ระดับสากล ผ่านการประเมินรับรองจาก TUV NORD (Thailand) Ltd. ต่อเนื่อง 2 ปีซ้อน',
+    excerpt: 'มาตรฐาน ISO 29110 ช่วยในการปรับปรุงสมรรถนะองค์กร ทำให้มีการบริหารจัดการคุณภาพและบริการด้านซอฟต์แวร์ที่มีประสิทธิภาพและมีศักยภาพในการเติบโตทางธุรกิจขององค์กร อีกทั้งยังสร้างความน่าเชื่อถือ เชื่อมั่น และสร้างภาพลักษณ์อันดีให้กับผู้ประกอบการซอฟต์แวร์และเวทีตลาดโลก',
+    body: `เพื่อเป็นการสร้างความเชื่อมั่นให้กับลูกค้า และมาตรฐานด้านการพัฒนาระบบงานมากยิ่งขึ้น บริษัท ไอเจนโก้ จำกัด จึงได้เข้าร่วมโครงการส่งเสริมให้ผู้ประกอบการได้รับมาตรฐาน ISO 29110 และได้ผ่านการประเมินรับรองจาก TUV NORD (Thailand) Ltd. เป็นที่เรียบร้อยต่อเนื่อง 2 ปีแล้ว Certificate ISO 29110:2011 จะเน้นในด้านกระบวนการพัฒนาระบบงานทั้งระบบ คือ Software management จนถึง Software Implementation process
+
+มาตรฐาน ISO 29110 (Software Engineering-Lifecycle Profiles for Very Small Enterprises (VSE)) เป็นมาตรฐานที่ให้การรับรองคุณภาพการบริหารงานหรือผลิตภัณฑ์ซอฟต์แวร์ให้แก่สถานประกอบการผู้ประกอบการ องค์กร ที่มีขนาดเล็ก โดยมีพนักงานไม่เกิน 25 คน หรือหน่วยงานด้าน software ที่อยู่ในองค์กรขนาดใหญ่ (ใช้มาตรฐาน ISO 15540 เป็นแม่แบบ) เพื่อให้มีกระบวนการในการพัฒนาซอฟต์แวร์ที่เป็นระบบและเข้าสู่กระบวนการทางสากล โดยจะเป็นการเริ่มต้นเชิงกิจกรรมของการปรับปรุงกระบวนการ หรือ SPI (Software Process Improvement)
+
+โดยที่มาตรฐาน ISO 29110 ให้ความสำคัญในกระบวนการที่จะต้องทำการปรับปรุงให้เป็นระบบ 2 กระบวนการหลัก คือ กระบวนการด้านการบริหารโครงการ (Project Management) และ กระบวนการด้านการสร้างซอฟต์แวร์ (Software Implementation)`,
+    image: '/images/news/iso-29110-award-ceremony.jpg',
+    imageCaption: 'พิธีปิดโครงการและมอบใบรับรอง โครงการส่งเสริมให้ผู้ประกอบการได้รับมาตรฐาน ISO 29110 ปี 2559 โดย สำนักงานส่งเสริมอุตสาหกรรมซอฟต์แวร์แห่งชาติ (องค์การมหาชน) SIPA ร่วมกับ กลุ่มฯเทคโนโลยีสารสนเทศ สภาอุตสาหกรรมแห่งประเทศไทย และ TUV NORD (Thailand) Ltd.',
+    certBadge: {
+      image: '/images/news/tuv-nord-iso-29110-logo.png',
+      title: 'TUV NORD (Thailand) Ltd.',
+      organization: 'TUV NORD Certification Body',
+      standard: 'ISO/IEC 29110:2011',
+      details: 'ผ่านการประเมินรับรองมาตรฐานต่อเนื่อง 2 ปีซ้อน ครอบคลุมกระบวนการ Software Management จนถึง Software Implementation Process',
+    },
+    diagrams: [
+      {
+        figureNumber: 'Figure 3',
+        title: 'กระบวนการด้านการบริหารโครงการ (Project Management process diagram)',
+        caption: 'แผนภาพกระบวนการบริหารโครงการตามมาตรฐาน ISO 29110 (Project Management Process)',
+        image: '/images/news/iso-29110-project-management.jpg',
+        highlights: [
+          'Project Planning — การวางแผนโครงการ ทรัพยากร ขอบเขต และกำหนดการ',
+          'Project Plan Execution — การดำเนินงานตามแผนงานและบันทึกผลการประชุม',
+          'Project Assessment and Control — การประเมินสถานะ ควบคุม และจัดการการเปลี่ยนแปลง (Change Request)',
+          'Project Closure — สรุปประเมินผล จัดทำประวัติ และส่งมอบงานอย่างเป็นระบบ',
+        ],
+      },
+      {
+        figureNumber: 'Figure 4',
+        title: 'กระบวนการด้านการสร้างซอฟต์แวร์ (Software Implementation process diagram)',
+        caption: 'แผนภาพวงจรการพัฒนาซอฟต์แวร์ตามมาตรฐาน ISO 29110 (Software Implementation Process)',
+        image: '/images/news/iso-29110-software-implementation.jpg',
+        highlights: [
+          'Software Implementation Initiation — กำหนดแนวทางและเตรียมความพร้อมในการพัฒนา',
+          'Software Requirements Analysis — วิเคราะห์และจัดทำข้อกำหนดความต้องการ (Requirements Specification)',
+          'Software Architectural and Detailed Design — ออกแบบสถาปัตยกรรม รายละเอียดระบบ และการทดสอบ',
+          'Software Construction — พัฒนาสร้างซอฟต์แวร์และส่วนประกอบ (Software Components)',
+          'Software Integration and Tests — บูรณาการระบบและทดสอบตาม Test Cases อย่างครบถ้วน',
+          'Product Delivery — ส่งมอบผลิตภัณฑ์ คู่มือการใช้งาน และเอกสารบำรุงรักษาแก่ลูกค้า',
+        ],
+      },
+    ],
+    highlights: [
+      'ปรับปรุงสมรรถนะองค์กร ทำให้มีการบริหารจัดการคุณภาพและบริการด้านซอฟต์แวร์ที่มีประสิทธิภาพและมีศักยภาพในการเติบโตทางธุรกิจ',
+      'สร้างความน่าเชื่อถือ ความเชื่อมั่น และภาพลักษณ์อันดีแก่ผู้ประกอบการซอฟต์แวร์และเวทีตลาดโลก',
+      'ผ่านการรับรองจาก TUV NORD (Thailand) Ltd. ต่อเนื่อง 2 ปีซ้อน การันตีมาตรฐานระดับสากล',
+      'ยึดถือ 2 กระบวนการหลัก: กระบวนการด้านการบริหารโครงการ (Project Management) และ กระบวนการด้านการสร้างซอฟต์แวร์ (Software Implementation)',
+      'เริ่มต้นเชิงกิจกรรมของการปรับปรุงกระบวนการ หรือ SPI (Software Process Improvement) ตามแม่แบบมาตรฐานสากล',
+    ],
+    gallery: [
+      '/images/news/iso-29110-project-management.jpg',
+      '/images/news/iso-29110-software-implementation.jpg',
+      '/images/news/tuv-nord-iso-29110-logo.png',
+    ],
+  },
+  {
     slug: 'hr-ai-workforce-analytics',
     category: 'อัปเดตผลิตภัณฑ์',
     badge: 'HR.ai',

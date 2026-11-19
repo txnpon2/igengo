@@ -30,16 +30,37 @@ export interface InfoModalOptions {
   onCancel?: () => void
 }
 
+export interface PostDiagram {
+  title: string
+  caption?: string
+  image: string
+  figureNumber?: string
+  highlights?: string[]
+}
+
 export interface Post {
   slug: string
   title: string
+  subtitle?: string
   category: string
   badge?: string
+  author?: string
+  authorRole?: string
   excerpt: string
   body: string
   image: string
+  imageCaption?: string
   publishedAt: string
   gallery?: string[]
+  diagrams?: PostDiagram[]
+  certBadge?: {
+    image: string
+    title: string
+    organization: string
+    standard: string
+    details: string
+  }
+  highlights?: string[]
 }
 
 export interface CaseStudy {
