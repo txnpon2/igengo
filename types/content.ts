@@ -49,6 +49,7 @@ export interface Post {
   excerpt: string
   body: string
   image: string
+  imagePosition?: string
   imageCaption?: string
   publishedAt: string
   gallery?: string[]

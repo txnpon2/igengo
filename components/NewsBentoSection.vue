@@ -159,15 +159,16 @@ onUnmounted(() => {
                   </div>
                 </div>
 
-                <!-- Bottom Photo with Seamless Fade Mask -->
-                <div class="relative w-full h-[220px] sm:h-[250px] overflow-hidden mt-auto">
+                <!-- Bottom Photo with Subtle Edge Blend -->
+                <div class="relative w-full h-[220px] sm:h-[250px] overflow-hidden mt-auto bg-slate-100">
                   <img
                     :src="slide[0].image"
                     :alt="slide[0].title"
                     loading="lazy"
-                    class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-out"
+                    :style="slide[0].imagePosition ? { objectPosition: slide[0].imagePosition } : {}"
+                    class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
                   />
-                  <div class="absolute inset-0 bg-gradient-to-t from-transparent via-white/10 to-white/95 pointer-events-none"></div>
+                  <div class="absolute top-0 inset-x-0 h-6 bg-gradient-to-b from-white to-transparent pointer-events-none"></div>
                 </div>
               </NuxtLink>
             </div>
@@ -204,15 +205,16 @@ onUnmounted(() => {
                   </div>
                 </div>
 
-                <!-- Bottom Photo with Seamless Fade Mask -->
-                <div class="relative w-full h-[220px] sm:h-[250px] overflow-hidden mt-auto">
+                <!-- Bottom Photo with Subtle Edge Blend -->
+                <div class="relative w-full h-[220px] sm:h-[250px] overflow-hidden mt-auto bg-slate-100">
                   <img
                     :src="slide[1].image"
                     :alt="slide[1].title"
                     loading="lazy"
-                    class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-out"
+                    :style="slide[1].imagePosition ? { objectPosition: slide[1].imagePosition } : {}"
+                    class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
                   />
-                  <div class="absolute inset-0 bg-gradient-to-t from-transparent via-white/10 to-white/95 pointer-events-none"></div>
+                  <div class="absolute top-0 inset-x-0 h-6 bg-gradient-to-b from-white to-transparent pointer-events-none"></div>
                 </div>
               </NuxtLink>
             </div>
@@ -254,15 +256,16 @@ onUnmounted(() => {
                   </div>
                 </div>
 
-                <!-- Bottom Photo with Seamless Fade Mask -->
-                <div class="relative w-full h-[210px] sm:h-[240px] overflow-hidden mt-auto">
+                <!-- Bottom Photo with Subtle Edge Blend -->
+                <div class="relative w-full h-[210px] sm:h-[240px] overflow-hidden mt-auto bg-slate-100">
                   <img
                     :src="post.image"
                     :alt="post.title"
                     loading="lazy"
-                    class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-out"
+                    :style="post.imagePosition ? { objectPosition: post.imagePosition } : {}"
+                    class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
                   />
-                  <div class="absolute inset-0 bg-gradient-to-t from-transparent via-white/10 to-white/95 pointer-events-none"></div>
+                  <div class="absolute top-0 inset-x-0 h-6 bg-gradient-to-b from-white to-transparent pointer-events-none"></div>
                 </div>
               </NuxtLink>
             </div>
@@ -312,15 +315,16 @@ onUnmounted(() => {
               </div>
             </div>
 
-            <!-- Bottom Photo with Fade -->
-            <div class="relative w-full h-[200px] overflow-hidden mt-auto">
+            <!-- Bottom Photo with Subtle Edge Blend -->
+            <div class="relative w-full h-[200px] overflow-hidden mt-auto bg-slate-100">
               <img
                 :src="post.image"
                 :alt="post.title"
                 loading="lazy"
-                class="w-full h-full object-cover object-top"
+                :style="post.imagePosition ? { objectPosition: post.imagePosition } : {}"
+                class="w-full h-full object-cover object-center"
               />
-              <div class="absolute inset-0 bg-gradient-to-t from-transparent via-white/10 to-white/95 pointer-events-none"></div>
+              <div class="absolute top-0 inset-x-0 h-6 bg-gradient-to-b from-white to-transparent pointer-events-none"></div>
             </div>
           </NuxtLink>
         </div>

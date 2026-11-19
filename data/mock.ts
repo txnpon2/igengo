@@ -201,6 +201,7 @@ export const posts: Post[] = [
 
 โดยที่มาตรฐาน ISO 29110 ให้ความสำคัญในกระบวนการที่จะต้องทำการปรับปรุงให้เป็นระบบ 2 กระบวนการหลัก คือ กระบวนการด้านการบริหารโครงการ (Project Management) และ กระบวนการด้านการสร้างซอฟต์แวร์ (Software Implementation)`,
     image: '/images/news/iso-29110-award-ceremony.jpg',
+    imagePosition: 'center 60%',
     imageCaption: 'พิธีปิดโครงการและมอบใบรับรอง โครงการส่งเสริมให้ผู้ประกอบการได้รับมาตรฐาน ISO 29110 ปี 2559 โดย สำนักงานส่งเสริมอุตสาหกรรมซอฟต์แวร์แห่งชาติ (องค์การมหาชน) SIPA ร่วมกับ กลุ่มฯเทคโนโลยีสารสนเทศ สภาอุตสาหกรรมแห่งประเทศไทย และ TUV NORD (Thailand) Ltd.',
     certBadge: {
       image: '/images/news/tuv-nord-iso-29110-logo.png',

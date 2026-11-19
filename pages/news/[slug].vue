@@ -129,29 +129,26 @@ useSeoMeta({
         <!-- Main Cover Photo (รูปแรกคือหน้าปกที่จะเห็น) -->
         <div class="mb-10">
           <div
-            class="group relative overflow-hidden rounded-[24px] sm:rounded-[32px] bg-slate-900 border border-slate-200/80 shadow-xl cursor-pointer"
+            class="group relative overflow-hidden rounded-[24px] sm:rounded-[32px] bg-slate-100 border border-slate-200/80 shadow-xl cursor-pointer"
             @click="openImagePreview(post.image, post.title, post.imageCaption)"
           >
             <img
               :src="post.image"
               :alt="post.title"
-              class="w-full h-auto max-h-[680px] object-cover object-top group-hover:scale-[1.01] transition-transform duration-500 ease-out"
+              :style="post.imagePosition ? { objectPosition: post.imagePosition } : {}"
+              class="w-full h-auto max-h-[760px] object-cover object-center group-hover:scale-[1.01] transition-transform duration-500 ease-out"
             />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/15 to-transparent flex items-end p-5 sm:p-7">
-              <div class="flex items-center justify-between w-full text-white">
-                <span class="text-xs sm:text-sm font-medium line-clamp-1 max-w-[85%] drop-shadow">
-                  {{ post.title }}
-                </span>
-                <span class="flex items-center gap-1 text-[11px] bg-white/20 hover:bg-white/30 backdrop-blur-md px-3 py-1 rounded-full text-white font-medium transition-all">
-                  <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
-                  </svg>
-                  <span>ขยายภาพ</span>
-                </span>
-              </div>
+            <!-- Clean floating zoom badge on bottom right so people are 100% visible -->
+            <div class="absolute bottom-4 right-4 z-10">
+              <span class="inline-flex items-center gap-1.5 text-xs bg-black/60 hover:bg-black/80 backdrop-blur-md px-3.5 py-1.5 rounded-full text-white font-medium shadow-md transition-all">
+                <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+                </svg>
+                <span>คลิกขยายภาพเต็ม</span>
+              </span>
             </div>
           </div>
-          <p v-if="post.imageCaption" class="mt-2.5 text-xs text-slate-500 text-center italic">
+          <p v-if="post.imageCaption" class="mt-3 text-xs sm:text-sm text-slate-500 text-center italic leading-relaxed">
             {{ post.imageCaption }}
           </p>
         </div>
