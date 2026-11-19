@@ -12,16 +12,34 @@ export interface Product {
   /** แสดงในตารางเปรียบเทียบ */
   core?: boolean
   deploy?: string
+  image?: string
+  icon?: string
+}
+
+export type ModalType = 'info' | 'success' | 'warning' | 'notice'
+
+export interface InfoModalOptions {
+  type?: ModalType
+  badge?: string
+  title: string
+  message: string
+  details?: string[]
+  confirmText?: string
+  cancelText?: string
+  onConfirm?: () => void | Promise<void>
+  onCancel?: () => void
 }
 
 export interface Post {
   slug: string
   title: string
   category: string
+  badge?: string
   excerpt: string
   body: string
   image: string
   publishedAt: string
+  gallery?: string[]
 }
 
 export interface CaseStudy {
@@ -41,4 +59,22 @@ export interface SiteInfo {
   line: string
   address: string
   hours: string
+}
+
+export interface ServedCompany {
+  name: string
+  shortName: string
+  logo: string
+  tag?: string
+}
+
+export interface HeroSlide {
+  id: string
+  eyebrow: string
+  titleLine1: string
+  titleLine2: string
+  highlight: string
+  description: string
+  primaryCta: { text: string; to: string }
+  secondaryCta: { text: string; to: string }
 }

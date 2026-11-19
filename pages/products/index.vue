@@ -3,6 +3,7 @@ import type { Category } from '~/types/content'
 
 const route = useRoute()
 const { categories, getProducts } = useContent()
+const { openProduct } = useAppleModal()
 const { data: products } = await useAsyncData('products', () => getProducts())
 const view = ref<'list' | 'compare'>('list')
 
@@ -23,10 +24,19 @@ useSeoMeta({ title: 'ผลิตภัณฑ์และบริการ' })
 <template>
   <section class="section">
     <div class="wrap">
-      <div class="mb-8 flex flex-wrap items-end justify-between gap-4">
+      <div class="mb-10 flex flex-wrap items-end justify-between gap-6">
         <div class="max-w-2xl">
-          <h1 class="text-3xl font-bold">ผลิตภัณฑ์ซอฟต์แวร์และบริการพัฒนาระบบ</h1>
-          <p class="mt-2 text-slate-600">แยกหมวดชัดเจนตามลักษณะงาน ระบุกลุ่มผู้ใช้และจุดเด่นของแต่ละระบบ</p>
+          <div class="section-eyebrow mb-3">
+            <span class="relative flex h-2 w-2">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#16834A] opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2 w-2 bg-[#16834A]"></span>
+            </span>
+            <span>ENTERPRISE SUITE</span>
+          </div>
+          <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-heading text-[#171717] tracking-tight leading-[1.2]">
+            ผลิตภัณฑ์ซอฟต์แวร์และบริการ<span class="text-gradient-emerald">พัฒนาระบบ</span>
+          </h1>
+          <p class="section-subtitle">แยกหมวดชัดเจนตามลักษณะงาน ระบุกลุ่มผู้ใช้และจุดเด่นของแต่ละระบบ</p>
         </div>
         <div class="inline-flex overflow-hidden rounded-full border border-slate-300 font-heading text-sm">
           <button :class="tab(view === 'list')" class="px-5 py-2.5 font-medium" @click="view = 'list'">รายการ ({{ all.length }})</button>
@@ -74,8 +84,17 @@ useSeoMeta({ title: 'ผลิตภัณฑ์และบริการ' })
               <td class="p-4">{{ p.audience.replace('สำหรับ', '') }}</td>
               <td class="p-4 text-slate-600">{{ p.summary }}</td>
               <td class="p-4 text-sm">{{ p.deploy }}</td>
-              <td class="p-4">
-                <NuxtLink :to="{ path: '/contact', query: { product: p.slug } }" class="btn-primary btn-sm whitespace-nowrap">นัดสาธิต</NuxtLink>
+              <td class="p-4 whitespace-nowrap">
+                <div class="flex items-center gap-2">
+                  <button
+                    type="button"
+                    class="text-xs font-semibold text-emerald-800 hover:text-emerald-950 px-3 py-1.5 rounded-full border border-emerald-300 hover:bg-emerald-50 transition-colors"
+                    @click="openProduct(p)"
+                  >
+                    ดูด่วน
+                  </button>
+                  <NuxtLink :to="{ path: '/contact', query: { product: p.slug } }" class="btn-primary btn-sm whitespace-nowrap">นัดสาธิต</NuxtLink>
+                </div>
               </td>
             </tr>
           </tbody>

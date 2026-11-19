@@ -1,5 +1,5 @@
 import type { CaseStudy, Post, Product } from '~/types/content'
-import { about, cases, categories, posts, products, site } from '~/data/mock'
+import { about, cases, categories, heroSlides, posts, products, servedCompanies, site } from '~/data/mock'
 
 /**
  * จุดเดียวที่หน้าเว็บดึงข้อมูล
@@ -29,5 +29,5 @@ export const useContent = () => {
   const formatDate = (iso: string) =>
     new Date(iso).toLocaleDateString('th-TH', { day: 'numeric', month: 'long', year: 'numeric' })
 
-  return { site, categories, about, getProducts, getProduct, getCases, getPosts, getPost, formatDate }
+  return { site, categories, about, heroSlides, servedCompanies, getProducts, getProduct, getCases, getPosts, getPost, formatDate }
 }

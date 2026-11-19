@@ -5,4 +5,7 @@
   <SiteHeader />
   <main id="main"><NuxtPage /></main>
   <SiteFooter />
+  <!-- Global Apple-Style Popups -->
+  <AppleProductModal />
+  <AppleInfoModal />
 </template>
