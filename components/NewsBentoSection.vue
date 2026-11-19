@@ -159,8 +159,8 @@ onUnmounted(() => {
                   </div>
                 </div>
 
-                <!-- Bottom Photo with Subtle Edge Blend -->
-                <div class="relative w-full h-[220px] sm:h-[250px] overflow-hidden mt-auto bg-slate-100">
+                <!-- Bottom Photo (Clean, Crisp, 100% visible) -->
+                <div class="relative w-full h-[230px] sm:h-[260px] overflow-hidden mt-auto bg-slate-100 border-t border-slate-100">
                   <img
                     :src="slide[0].image"
                     :alt="slide[0].title"
@@ -168,7 +168,6 @@ onUnmounted(() => {
                     :style="slide[0].imagePosition ? { objectPosition: slide[0].imagePosition } : {}"
                     class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
                   />
-                  <div class="absolute top-0 inset-x-0 h-6 bg-gradient-to-b from-white to-transparent pointer-events-none"></div>
                 </div>
               </NuxtLink>
             </div>
@@ -205,8 +204,8 @@ onUnmounted(() => {
                   </div>
                 </div>
 
-                <!-- Bottom Photo with Subtle Edge Blend -->
-                <div class="relative w-full h-[220px] sm:h-[250px] overflow-hidden mt-auto bg-slate-100">
+                <!-- Bottom Photo (Clean, Crisp, 100% visible) -->
+                <div class="relative w-full h-[230px] sm:h-[260px] overflow-hidden mt-auto bg-slate-100 border-t border-slate-100">
                   <img
                     :src="slide[1].image"
                     :alt="slide[1].title"
@@ -214,7 +213,6 @@ onUnmounted(() => {
                     :style="slide[1].imagePosition ? { objectPosition: slide[1].imagePosition } : {}"
                     class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
                   />
-                  <div class="absolute top-0 inset-x-0 h-6 bg-gradient-to-b from-white to-transparent pointer-events-none"></div>
                 </div>
               </NuxtLink>
             </div>
@@ -256,8 +254,8 @@ onUnmounted(() => {
                   </div>
                 </div>
 
-                <!-- Bottom Photo with Subtle Edge Blend -->
-                <div class="relative w-full h-[210px] sm:h-[240px] overflow-hidden mt-auto bg-slate-100">
+                <!-- Bottom Photo (Clean, Crisp, 100% visible) -->
+                <div class="relative w-full h-[210px] sm:h-[240px] overflow-hidden mt-auto bg-slate-100 border-t border-slate-100">
                   <img
                     :src="post.image"
                     :alt="post.title"
@@ -265,7 +263,6 @@ onUnmounted(() => {
                     :style="post.imagePosition ? { objectPosition: post.imagePosition } : {}"
                     class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
                   />
-                  <div class="absolute top-0 inset-x-0 h-6 bg-gradient-to-b from-white to-transparent pointer-events-none"></div>
                 </div>
               </NuxtLink>
             </div>
@@ -315,8 +312,8 @@ onUnmounted(() => {
               </div>
             </div>
 
-            <!-- Bottom Photo with Subtle Edge Blend -->
-            <div class="relative w-full h-[200px] overflow-hidden mt-auto bg-slate-100">
+            <!-- Bottom Photo (Clean, Crisp, 100% visible) -->
+            <div class="relative w-full h-[210px] overflow-hidden mt-auto bg-slate-100 border-t border-slate-100">
               <img
                 :src="post.image"
                 :alt="post.title"
@@ -324,7 +321,6 @@ onUnmounted(() => {
                 :style="post.imagePosition ? { objectPosition: post.imagePosition } : {}"
                 class="w-full h-full object-cover object-center"
               />
-              <div class="absolute top-0 inset-x-0 h-6 bg-gradient-to-b from-white to-transparent pointer-events-none"></div>
             </div>
           </NuxtLink>
         </div>
