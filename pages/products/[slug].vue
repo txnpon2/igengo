@@ -273,11 +273,12 @@ useSeoMeta({
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
-          <div
+          <NuxtLink
             v-for="(item, idx) in product.gallery"
             :key="idx"
-            class="group rounded-3xl bg-white border border-slate-200/90 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col cursor-pointer text-left"
-            @click="openGalleryModal(item)"
+            :to="item.link || '#'"
+            class="group rounded-3xl bg-white border border-slate-200/90 overflow-hidden shadow-sm hover:shadow-xl hover:border-[#16834A]/50 transition-all duration-300 flex flex-col text-left cursor-pointer"
+            @click="!item.link ? openGalleryModal(item) : null"
           >
             <!-- Image Thumbnail with Zoom Overlay -->
             <div class="relative aspect-[16/8.8] bg-slate-100 overflow-hidden flex items-center justify-center border-b border-slate-100">
@@ -286,12 +287,13 @@ useSeoMeta({
                 :alt="item.title"
                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />
-              <div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white/95 text-[#171717] text-xs font-bold font-heading shadow-md">
+              <div class="absolute inset-0 bg-black/35 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                <span class="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-white/95 text-[#171717] text-xs font-bold font-heading shadow-md">
                   <svg class="w-4 h-4 text-[#16834A]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                   </svg>
-                  <span>คลิกเพื่อดูภาพขนาดใหญ่</span>
+                  <span>{{ item.link ? 'คลิกเพื่อดูภาพและรายละเอียดทั้งหมด' : 'คลิกเพื่อดูภาพขนาดใหญ่' }}</span>
                 </span>
               </div>
             </div>
@@ -307,20 +309,11 @@ useSeoMeta({
                 </p>
               </div>
               <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-semibold text-[#16834A]">
-                <NuxtLink
-                  v-if="item.link"
-                  :to="item.link"
-                  class="inline-flex items-center gap-1.5 font-bold hover:underline"
-                  @click.stop
-                >
-                  <span>ดูภาพและรายละเอียดฉบับเต็ม</span>
-                  <span>→</span>
-                </NuxtLink>
-                <span v-else>ดูภาพความละเอียดเต็ม</span>
-                <span v-if="!item.link" class="transform group-hover:translate-x-1 transition-transform">→</span>
+                <span class="font-bold">{{ item.link ? 'ดูภาพและรายละเอียดฉบับเต็ม' : 'ดูภาพความละเอียดเต็ม' }}</span>
+                <span class="transform group-hover:translate-x-1.5 transition-transform">→</span>
               </div>
             </div>
-          </div>
+          </NuxtLink>
         </div>
       </div>
     </section>

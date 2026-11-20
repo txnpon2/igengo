@@ -235,10 +235,22 @@ onUnmounted(() => {
                     v-for="(g, gIdx) in activeProduct.gallery"
                     :key="gIdx"
                     class="group relative rounded-xl overflow-hidden border border-slate-200 aspect-[16/10] bg-slate-100 cursor-pointer shadow-xs hover:shadow-md transition-all"
-                    @click="openLightbox(g.image, g.title)"
                   >
                     <img :src="g.image" :alt="g.title" class="w-full h-full object-cover group-hover:scale-105 transition-transform" />
-                    <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center p-1.5 text-center">
+                    <NuxtLink
+                      v-if="g.link"
+                      :to="g.link"
+                      class="absolute inset-0 z-10 flex flex-col items-center justify-center p-1.5 text-center bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity text-white"
+                      @click="closeProduct"
+                    >
+                      <span class="text-[10px] font-semibold leading-tight line-clamp-2">{{ g.title }}</span>
+                      <span class="text-[9px] text-emerald-300 font-bold mt-1">คลิกดูรายละเอียด →</span>
+                    </NuxtLink>
+                    <div
+                      v-else
+                      class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center p-1.5 text-center cursor-pointer"
+                      @click="openLightbox(g.image, g.title)"
+                    >
                       <span class="text-[11px] text-white font-medium leading-tight line-clamp-2">{{ g.title }}</span>
                     </div>
                   </div>
