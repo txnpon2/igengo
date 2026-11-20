@@ -467,6 +467,18 @@ useSeoMeta({
                     <h4 class="text-xs sm:text-sm font-bold font-heading text-slate-100 line-clamp-1">
                       ไอเจนคิว (iGenQ): ระบบจัดการคิวอัจฉริยะ i-Regist By IGENCO
                     </h4>
+                    <a
+                      href="https://www.youtube.com/watch?v=sR7L1oThLOA"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-rose-600 hover:bg-rose-700 text-white text-[11px] font-bold font-heading shrink-0 transition-colors shadow-xs"
+                      title="ดูคลิปวิดีโอบน YouTube"
+                    >
+                      <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+                        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                      </svg>
+                      <span>เปิดดูบน YouTube</span>
+                    </a>
                   </div>
                   <p class="text-[11px] text-slate-400 mt-1 line-clamp-2 leading-relaxed">
                     ระบบคิวแบบ New Normal ใช้งานได้ทันทีโดยไม่ต้องติดตั้ง App สแกน QR Code รับ e-Ticket ดูสถานะบนมือถือ พร้อมแจ้งเตือนผ่าน LINE Notify และแสดงผลบน Android/Google TV
