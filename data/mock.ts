@@ -195,12 +195,6 @@ export const products: Product[] = [
       },
       {
         title: 'รางวัล The Winner — OIIO Thailand Techland 2019',
-        image: '/images/products/hr-ai/oiio-2019-award-trophy.jpg',
-        caption: 'รางวัลแห่งความภาคภูมิใจถึงความสำเร็จของการเปลี่ยนแปลงองค์กร และเป็นแบบอย่างให้กับสังคมไทยในยุคดิจิทัลไทยแลนด์ 4.0 อย่างแท้จริง',
-        link: '/news/hr-ai-oiio-2019-winner',
-      },
-      {
-        title: 'ภาพพิธีมอบรางวัล The Winner ในงาน OIIO2019',
         image: '/images/products/hr-ai/oiio-2019-award-ceremony.jpg',
         caption: 'คุณทวีวัตร์ ทรรศนะประทีป กรรมการผู้จัดการ บริษัท ไอเจนโก้ จำกัด รับมอบรางวัล The Winner บนเวที OIIO Thailand Techland 2019',
         link: '/news/hr-ai-oiio-2019-winner',
