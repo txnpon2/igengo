@@ -14,6 +14,19 @@ export interface Product {
   deploy?: string
   image?: string
   icon?: string
+  adminFeatures?: string[]
+  userFeatures?: string[]
+  gallery?: { title: string; image: string; caption?: string }[]
+  externalUrl?: string
+  contact?: { name: string; phone: string; email: string }
+  brochures?: { title: string; url: string }[]
+  subModules?: {
+    code: string
+    title: string
+    description: string
+    features: string[]
+    images?: { title: string; image: string; caption?: string }[]
+  }[]
 }
 
 export type ModalType = 'info' | 'success' | 'warning' | 'notice'

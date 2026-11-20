@@ -4,13 +4,19 @@ const { categories } = useContent()
 
 // Lightbox state for expanding image
 const isLightboxOpen = ref(false)
+const lightboxImageSrc = ref('')
+const lightboxTitle = ref('')
 
-function openLightbox() {
+function openLightbox(src?: string, title?: string) {
+  lightboxImageSrc.value = typeof src === 'string' ? src : (activeProduct.value?.image || '')
+  lightboxTitle.value = typeof title === 'string' ? title : (activeProduct.value?.title || '')
   isLightboxOpen.value = true
 }
 
 function closeLightbox() {
   isLightboxOpen.value = false
+  lightboxImageSrc.value = ''
+  lightboxTitle.value = ''
 }
 
 // Close on Escape key press
@@ -218,6 +224,27 @@ onUnmounted(() => {
                 </ul>
               </div>
 
+              <!-- Process Diagrams Preview (if available) -->
+              <div v-if="activeProduct.gallery && activeProduct.gallery.length">
+                <h3 class="flex items-center gap-2 text-xs uppercase tracking-wider font-bold text-slate-400 font-heading mb-3">
+                  <span class="w-2 h-2 rounded-full bg-[#16834A]"></span>
+                  <span>แผนผังกระบวนการระบบ (System Diagrams)</span>
+                </h3>
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
+                  <div
+                    v-for="(g, gIdx) in activeProduct.gallery"
+                    :key="gIdx"
+                    class="group relative rounded-xl overflow-hidden border border-slate-200 aspect-[16/10] bg-slate-100 cursor-pointer shadow-xs hover:shadow-md transition-all"
+                    @click="openLightbox(g.image, g.title)"
+                  >
+                    <img :src="g.image" :alt="g.title" class="w-full h-full object-cover group-hover:scale-105 transition-transform" />
+                    <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center p-1.5 text-center">
+                      <span class="text-[11px] text-white font-medium leading-tight line-clamp-2">{{ g.title }}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
               <!-- Enterprise Trust & Standards Badge Grid (Modern Tech Trust Box) -->
               <div class="p-4 sm:p-5 rounded-2xl bg-slate-50 border border-slate-200/80">
                 <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-center">
@@ -290,15 +317,15 @@ onUnmounted(() => {
       >
         <div class="relative max-w-5xl max-h-[90vh] flex flex-col items-center justify-center" @click.stop>
           <img
-            :src="activeProduct.image"
-            :alt="activeProduct.title"
-            class="max-w-full max-h-[80vh] object-contain rounded-2xl shadow-2xl border border-white/20"
+            :src="lightboxImageSrc || activeProduct.image"
+            :alt="lightboxTitle || activeProduct.title"
+            class="max-w-full max-h-[80vh] object-contain rounded-2xl shadow-2xl border border-white/20 bg-white"
           />
           <div class="mt-4 text-center text-white font-heading">
             <span class="rounded-lg bg-[#16834A] px-2.5 py-0.5 text-xs font-bold mr-2">
               {{ activeProduct.code }}
             </span>
-            <span class="text-sm font-semibold">{{ activeProduct.title }}</span>
+            <span class="text-sm font-semibold">{{ lightboxTitle || activeProduct.title }}</span>
           </div>
 
           <button
