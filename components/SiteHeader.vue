@@ -588,48 +588,26 @@ const isTransparent = computed(() => isHome.value && !isScrolled.value && !open.
             ></span>
           </NuxtLink>
 
-          <!-- Contact Dropdown Menu -->
+          <!-- Contact Dropdown Menu matching About Dropdown Style -->
           <div class="invisible absolute right-0 top-full pt-2 opacity-0 transition-all duration-200 group-focus-within:visible group-focus-within:opacity-100 group-hover:visible group-hover:opacity-100">
-            <div class="w-80 rounded-2xl border border-black/10 bg-white p-3 shadow-2xl backdrop-blur-2xl text-[#171717] space-y-1">
+            <div class="w-64 sm:w-72 rounded-2xl border border-black/10 bg-white p-2 shadow-2xl backdrop-blur-2xl text-[#171717] space-y-0.5 font-heading">
               
               <!-- Sub-page 1: Contact Company / Office & Map -->
               <NuxtLink
                 to="/contact/company"
-                class="flex items-start gap-3 rounded-xl p-3 hover:bg-[#F4F5F4] transition-all group/item"
+                class="flex items-center justify-between rounded-xl px-4 py-2.5 text-sm font-medium hover:bg-[#F4F5F4] transition-all group/item"
+                :class="route.path === '/contact/company' ? 'text-[#16834A] font-bold bg-[#F4F5F4]' : 'text-[#171717] hover:text-[#16834A]'"
               >
-                <div class="w-9 h-9 rounded-lg bg-[#16834A]/10 text-[#16834A] flex items-center justify-center shrink-0 mt-0.5">
-                  <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                  </svg>
-                </div>
-                <div>
-                  <span class="block text-sm font-bold text-[#171717] group-hover/item:text-[#16834A] transition-colors">
-                    1. ติดต่อบริษัท (สถานที่ & แผนที่)
-                  </span>
-                  <span class="block text-xs text-slate-500 mt-0.5 leading-snug">
-                    สถานที่ตั้งสำนักงานใหญ่ แผนที่การเดินทาง
-                  </span>
-                </div>
+                <span>{{ locale === 'th' ? 'ติดต่อบริษัท (สถานที่ & แผนที่)' : 'Head Office & Map' }}</span>
               </NuxtLink>
 
               <!-- Sub-page 2: Contact Sales / Book Demo -->
               <NuxtLink
                 to="/contact/sales"
-                class="flex items-start gap-3 rounded-xl p-3 hover:bg-[#F4F5F4] transition-all group/item"
+                class="flex items-center justify-between rounded-xl px-4 py-2.5 text-sm font-medium hover:bg-[#F4F5F4] transition-all group/item"
+                :class="(route.path === '/contact/sales' || route.path === '/contact') ? 'text-[#16834A] font-bold bg-[#F4F5F4]' : 'text-[#171717] hover:text-[#16834A]'"
               >
-                <div class="w-9 h-9 rounded-lg bg-[#16834A]/10 text-[#16834A] flex items-center justify-center shrink-0 mt-0.5">
-                  <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                  </svg>
-                </div>
-                <div>
-                  <span class="block text-sm font-bold text-[#171717] group-hover/item:text-[#16834A] transition-colors">
-                    2. ติดต่อฝ่ายขาย / นัดสาธิตระบบ
-                  </span>
-                  <span class="block text-xs text-slate-500 mt-0.5 leading-snug">
-                    ขอใบเสนอราคา และนัดหมายสาธิตระบบ
-                  </span>
-                </div>
+                <span>{{ locale === 'th' ? 'ติดต่อฝ่ายขาย / นัดสาธิตระบบ' : 'Contact Sales / Demo' }}</span>
               </NuxtLink>
 
             </div>
@@ -882,7 +860,7 @@ const isTransparent = computed(() => isHome.value && !isScrolled.value && !open.
           class="flex items-center justify-between rounded-lg px-3 py-2.5 text-sm font-medium transition-all"
           :class="route.path === '/contact/company' ? 'bg-white text-[#16834A] font-bold shadow-sm' : 'text-[#171717] hover:bg-white'"
         >
-          <span>🏢 1. ติดต่อบริษัท & แผนที่</span>
+          <span>🏢 ติดต่อบริษัท (สถานที่ & แผนที่)</span>
           <span v-if="route.path === '/contact/company'" class="w-2 h-2 rounded-full bg-[#16834A]"></span>
         </NuxtLink>
         <NuxtLink
@@ -890,7 +868,7 @@ const isTransparent = computed(() => isHome.value && !isScrolled.value && !open.
           class="flex items-center justify-between rounded-lg px-3 py-2.5 text-sm font-medium transition-all"
           :class="route.path === '/contact/sales' || route.path === '/contact' ? 'bg-white text-[#16834A] font-bold shadow-sm' : 'text-[#171717] hover:bg-white'"
         >
-          <span>💼 2. ติดต่อฝ่ายขาย / นัดสาธิต</span>
+          <span>💼 ติดต่อฝ่ายขาย / นัดสาธิตระบบ</span>
           <span v-if="route.path === '/contact/sales' || route.path === '/contact'" class="w-2 h-2 rounded-full bg-[#16834A]"></span>
         </NuxtLink>
       </div>
