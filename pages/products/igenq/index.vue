@@ -128,7 +128,7 @@ const menuItems = [
     title: 'รู้จัก iGenQ',
     sub: 'ภาพรวมระบบคิวอัจฉริยะ',
     image: '/images/products/igenq/menu-about.jpg',
-    to: '/contact/sales',
+    to: '/products/igenq/about',
     external: false,
   },
   {
