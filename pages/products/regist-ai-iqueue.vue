@@ -38,7 +38,7 @@ onUnmounted(() => {
 
 useSeoMeta({
   title: 'i-Queue by Regist.ai ระบบบริหารคิวอัจฉริยะแบบ New Normal | IGENCO',
-  description: 'ระบบจัดการคิวหน้างานอัจฉริยะ i-Queue รองรับ Smart Phone, Tablet, Thermal Printer จุดบริการต่อเนื่อง (โรงพยาบาล/ตรวจสุขภาพ) และร้านอาหาร',
+  description: 'ระบบจัดการคิวหน้างานอัจฉริยะ i-Queue เหมาะสำหรับการตรวจสุขภาพ ฉีดวัคซีนให้พนักงาน โรงพยาบาล ร้านอาหาร คลินิก รองรับ Smart Phone, Tablet, Thermal Printer',
 })
 </script>
 
@@ -58,7 +58,7 @@ useSeoMeta({
           <span class="text-slate-300">/</span>
           <NuxtLink to="/products/regist-ai" class="hover:text-[#16834A] transition-colors">Regist.ai</NuxtLink>
           <span class="text-slate-300">/</span>
-          <span class="text-[#16834A] font-semibold">i-Queue ระบบบริหารคิวอัจฉริยะ</span>
+          <span class="text-purple-700 font-semibold">i-Queue ระบบการจัดการคิว</span>
         </nav>
 
         <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6">
@@ -72,7 +72,7 @@ useSeoMeta({
                 New Normal Solution
               </span>
               <span class="px-3 py-1 rounded-full bg-emerald-50 text-[#16834A] text-xs font-heading font-medium border border-emerald-200/60">
-                PDPA Ready
+                PDPA Compliant
               </span>
             </div>
 
@@ -80,7 +80,7 @@ useSeoMeta({
               ระบบการจัดการคิว i-Queue by Regist.ai
             </h1>
             <p class="mt-3 text-sm sm:text-base text-slate-600 font-normal leading-relaxed">
-              ระบบจัดการคิวแบบ New Normal ช่วยลดความเสี่ยงในการสัมผัสหน้าจอกดบัตรคิว ใช้งานง่ายบน Tablet / Smart Phone รองรับทั้งจุดบริการต่อเนื่องหลายสถานี (Multi Check-point) และบริการเคาน์เตอร์เดี่ยว (Single-counter)
+              ระบบบริหารคิวอัจฉริยะ เหมาะสำหรับ <strong>การตรวจสุขภาพ, ฉีดวัคซีนให้พนักงาน, โรงพยาบาล, ร้านอาหาร และศูนย์บริการอื่น ๆ</strong> ช่วยลดความเสี่ยงในการสัมผัสหน้าจอกดบัตรคิว ใช้งานสะดวกผ่าน Tablet / Smart Phone
             </p>
           </div>
 
@@ -111,17 +111,17 @@ useSeoMeta({
     <!-- Main Content Container -->
     <main class="wrap py-10 sm:py-14 space-y-10 sm:space-y-14 text-left">
 
-      <!-- SECTION 1: Overview Banner Infographic -->
+      <!-- SECTION 1: Featured Overview Infographic & Core Specs -->
       <section class="rounded-3xl bg-white border border-slate-200/90 p-4 sm:p-7 shadow-lg shadow-slate-200/40 overflow-hidden">
         <div class="flex items-center justify-between mb-4 pb-3 border-b border-slate-100">
           <div>
-            <span class="text-xs font-bold uppercase tracking-wider text-purple-700 font-heading block">ภาพรวมระบบคิว New Normal</span>
-            <h2 class="text-lg sm:text-xl font-bold font-heading text-[#171717]">i-Queue by Regist.ai Overview</h2>
+            <span class="text-xs font-bold uppercase tracking-wider text-purple-700 font-heading block">แผนผังภาพรวมระบบ</span>
+            <h2 class="text-lg sm:text-xl font-bold font-heading text-[#171717]">ระบบการจัดการคิว i-Queue by Regist.ai (New Normal)</h2>
           </div>
           <button
             type="button"
             class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold font-heading transition-colors"
-            @click="openLightbox('/images/products/regist-ai/iqueue-overview.jpg', 'ภาพรวมระบบการจัดการคิว i-Queue by Regist.ai')"
+            @click="openLightbox('/images/products/regist-ai/iqueue-overview.jpg', 'ระบบการจัดการคิว i-Queue by Regist.ai')"
           >
             <svg class="w-4 h-4 text-purple-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" />
@@ -130,39 +130,118 @@ useSeoMeta({
           </button>
         </div>
 
+        <!-- Featured Image Frame -->
         <div
           class="relative w-full rounded-2xl overflow-hidden bg-slate-50 border border-slate-200/80 cursor-pointer group shadow-inner"
-          @click="openLightbox('/images/products/regist-ai/iqueue-overview.jpg', 'ภาพรวมระบบการจัดการคิว i-Queue by Regist.ai')"
+          @click="openLightbox('/images/products/regist-ai/iqueue-overview.jpg', 'ระบบการจัดการคิว i-Queue by Regist.ai')"
+          title="คลิกเพื่อขยายภาพขนาดใหญ่"
         >
           <img
             src="/images/products/regist-ai/iqueue-overview.jpg"
-            alt="ภาพรวมระบบการจัดการคิว i-Queue by Regist.ai"
+            alt="ระบบการจัดการคิว i-Queue by Regist.ai"
             class="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-[1.01]"
           />
+          <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+            <span class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/95 text-[#171717] text-xs sm:text-sm font-bold font-heading shadow-xl">
+              <svg class="w-5 h-5 text-purple-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" />
+              </svg>
+              <span>คลิกเพื่อดูภาพความละเอียดสูง (Full Screen)</span>
+            </span>
+          </div>
         </div>
 
-        <!-- 5 Key Highlights -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6 pt-6 border-t border-slate-100 text-xs sm:text-sm">
-          <div class="p-4 rounded-2xl bg-purple-50/70 border border-purple-100">
-            <span class="font-bold text-purple-900 block font-heading mb-1">สแกน QR Code รับคิว</span>
-            <p class="text-purple-800 text-xs">กดบัตรคิวออนไลน์ผ่านสมาร์ทโฟนโดยการสแกน QR Code ไม่ต้องสัมผัสหน้าจอกลาง</p>
+        <!-- Target Business Checklist (ธุรกิจที่เหมาะสำหรับโปรแกรม) -->
+        <div class="mt-6 pt-6 border-t border-slate-100">
+          <div class="p-5 rounded-2xl bg-purple-50/60 border border-purple-200/60 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div>
+              <span class="text-xs font-bold uppercase tracking-wider text-purple-900 font-heading block">กลุ่มธุรกิจเป้าหมาย</span>
+              <h3 class="text-base font-bold font-heading text-purple-950 mt-0.5">ธุรกิจที่เหมาะสำหรับโปรแกรมการจัดการคิว</h3>
+            </div>
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+              <div class="flex items-center gap-2 bg-white px-3 py-1.5 rounded-xl border border-purple-200/80 text-xs font-bold text-purple-900 shadow-xs">
+                <span class="w-4 h-4 rounded-full bg-purple-600 text-white flex items-center justify-center text-[10px]">✓</span>
+                <span>โรงพยาบาล</span>
+              </div>
+              <div class="flex items-center gap-2 bg-white px-3 py-1.5 rounded-xl border border-purple-200/80 text-xs font-bold text-purple-900 shadow-xs">
+                <span class="w-4 h-4 rounded-full bg-purple-600 text-white flex items-center justify-center text-[10px]">✓</span>
+                <span>โรงพยาบาลสนาม</span>
+              </div>
+              <div class="flex items-center gap-2 bg-white px-3 py-1.5 rounded-xl border border-purple-200/80 text-xs font-bold text-purple-900 shadow-xs">
+                <span class="w-4 h-4 rounded-full bg-purple-600 text-white flex items-center justify-center text-[10px]">✓</span>
+                <span>คลินิก</span>
+              </div>
+              <div class="flex items-center gap-2 bg-white px-3 py-1.5 rounded-xl border border-purple-200/80 text-xs font-bold text-purple-900 shadow-xs">
+                <span class="w-4 h-4 rounded-full bg-purple-600 text-white flex items-center justify-center text-[10px]">✓</span>
+                <span>ร้านอาหาร</span>
+              </div>
+            </div>
           </div>
-          <div class="p-4 rounded-2xl bg-emerald-50/70 border border-emerald-100">
-            <span class="font-bold text-emerald-900 block font-heading mb-1">Thermal Printer Integration</span>
-            <p class="text-emerald-800 text-xs">สั่งพิมพ์บัตรคิวและแบบฟอร์มเข้าร่วมงานผ่านเครื่องพิมพ์ความร้อนได้อย่างรวดเร็ว</p>
-          </div>
-          <div class="p-4 rounded-2xl bg-slate-100 border border-slate-200">
-            <span class="font-bold text-slate-900 block font-heading mb-1">PDPA Privacy Ready</span>
-            <p class="text-slate-700 text-xs">มีระบบจัดการนโยบายความเป็นส่วนตัวและการให้ความยินยอมในการเก็บข้อมูลตามกฎหมาย</p>
+        </div>
+
+        <!-- System Capabilities Grid (คุณสมบัติโปรแกรม) -->
+        <div class="mt-6 pt-2">
+          <h3 class="font-heading font-bold text-base text-[#171717] mb-3.5 flex items-center gap-2">
+            <span class="w-2.5 h-2.5 rounded-full bg-purple-600"></span>
+            <span>คุณสมบัติโปรแกรม i-Queue by Regist.ai</span>
+          </h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs sm:text-sm">
+            <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200/80 flex items-start gap-3">
+              <span class="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-purple-100 text-purple-700 font-bold text-xs">✓</span>
+              <div>
+                <strong class="text-slate-900 block font-heading mb-0.5">จองคิวออนไลน์ล่วงหน้าผ่านสมาร์ทโฟน</strong>
+                <p class="text-slate-600">ผู้รับบริการสามารถลงทะเบียนจองคิวออนไลน์ล่วงหน้าผ่านสมาร์ทโฟน โดยการสแกน QR Code</p>
+              </div>
+            </div>
+
+            <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200/80 flex items-start gap-3">
+              <span class="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-purple-100 text-purple-700 font-bold text-xs">✓</span>
+              <div>
+                <strong class="text-slate-900 block font-heading mb-0.5">สแกนและพิมพ์บัตรคิวหน้างาน (Thermal Printer)</strong>
+                <p class="text-slate-600">ผู้รับบริการแสดงคิวให้เจ้าหน้าที่สแกน และสั่งพิมพ์บัตรคิวและแบบฟอร์มเข้าร่วมงานได้อย่างรวดเร็ว</p>
+              </div>
+            </div>
+
+            <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200/80 flex items-start gap-3">
+              <span class="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-purple-100 text-purple-700 font-bold text-xs">✓</span>
+              <div>
+                <strong class="text-slate-900 block font-heading mb-0.5">ระบบบริหารคิวหน้างานแบบหลายจุดบริการ</strong>
+                <p class="text-slate-600">สร้างจุดบริการได้หลายจุดต่อหนึ่งสถานที่ พร้อมระบบเรียกคิวเข้ารับบริการอย่างเป็นระเบียบ</p>
+              </div>
+            </div>
+
+            <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200/80 flex items-start gap-3">
+              <span class="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-purple-100 text-purple-700 font-bold text-xs">✓</span>
+              <div>
+                <strong class="text-slate-900 block font-heading mb-0.5">รายงานสถิติตามจุด Check-Point แบบ Real-time</strong>
+                <p class="text-slate-600">สามารถพิมพ์รายงานและตรวจสอบจำนวนผู้รับบริการตามจุด Check-Point แต่ละแห่งได้ทันที</p>
+              </div>
+            </div>
+
+            <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200/80 flex items-start gap-3">
+              <span class="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-purple-100 text-purple-700 font-bold text-xs">✓</span>
+              <div>
+                <strong class="text-slate-900 block font-heading mb-0.5">เชื่อมโยงข้อมูลกับระบบ Regist.ai</strong>
+                <p class="text-slate-600">เชื่อมโยงข้อมูลการลงทะเบียนจองคิวล่วงหน้าเพื่อรับ e-Ticket ผ่านระบบ Regist.ai ได้อย่างไร้รอยต่อ</p>
+              </div>
+            </div>
+
+            <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200/80 flex items-start gap-3">
+              <span class="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-purple-100 text-purple-700 font-bold text-xs">✓</span>
+              <div>
+                <strong class="text-slate-900 block font-heading mb-0.5">ระบบจัดการนโยบายความเป็นส่วนตัว (PDPA Ready)</strong>
+                <p class="text-slate-600">มีระบบจัดการนโยบายความเป็นส่วนตัวและการให้ความยินยอมในการเก็บรวบรวมข้อมูลตามกฎหมาย</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      <!-- SECTION 2: Multi-Checkpoint Flow (Hospital / Health Check / Vaccine) -->
-      <section class="rounded-3xl bg-white border border-slate-200/90 p-4 sm:p-7 shadow-lg shadow-slate-200/40 overflow-hidden">
+      <!-- SECTION 2: Multi-Checkpoint Continuous Flow (จุดบริการต่อเนื่อง เช่น ฉีดวัคซีน / ตรวจสุขภาพ) -->
+      <section id="hospital-flow" class="rounded-3xl bg-white border border-slate-200/90 p-4 sm:p-7 shadow-lg shadow-slate-200/40 overflow-hidden">
         <div class="flex items-center justify-between mb-4 pb-3 border-b border-slate-100">
           <div>
-            <span class="text-xs font-bold uppercase tracking-wider text-[#16834A] font-heading block">รูปแบบที่ 1: หลายช่องบริการต่อเนื่อง</span>
+            <span class="text-xs font-bold uppercase tracking-wider text-[#16834A] font-heading block">การเรียกคิวแบบหลายช่องบริการต่อเนื่อง</span>
             <h2 class="text-lg sm:text-xl font-bold font-heading text-[#171717]">ขั้นตอนการจัดคิวหน้างาน (โรงพยาบาล, จุดฉีดวัคซีน, ตรวจสุขภาพ)</h2>
           </div>
           <button
@@ -177,6 +256,10 @@ useSeoMeta({
           </button>
         </div>
 
+        <div class="p-4 rounded-2xl bg-emerald-50/70 border border-emerald-200/60 mb-5 text-xs sm:text-sm text-emerald-950 font-medium">
+          <strong>การทำงานต่อเนื่อง:</strong> เช่น การจัดคิวฉีดวัคซีน เมื่อผู้รับบริการ Check-in จะได้เลขคิว โดยเจ้าหน้าที่สามารถเรียกคิวเดียวกันตามจุดบริการต่างๆ ได้ต่อเนื่อง ไม่ต้องกดบัตรคิวใหม่ในแต่ละจุด
+        </div>
+
         <div
           class="relative w-full rounded-2xl overflow-hidden bg-slate-50 border border-slate-200/80 cursor-pointer group shadow-inner"
           @click="openLightbox('/images/products/regist-ai/iqueue-flow-hospital.jpg', 'ขั้นตอนการจัดคิวหน้างาน จุดบริการต่อเนื่อง (โรงพยาบาล / ฉีดวัคซีน / ตรวจสุขภาพ)')"
@@ -188,7 +271,7 @@ useSeoMeta({
           />
         </div>
 
-        <!-- 5 Steps Breakdown -->
+        <!-- 5 Continuous Steps -->
         <div class="mt-6 pt-6 border-t border-slate-100">
           <h3 class="font-heading font-bold text-base text-[#171717] mb-3">กระบวนการไหลของคิว 5 จุดบริการ (Continuous Multi Check-Point):</h3>
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3 text-xs">
@@ -216,11 +299,11 @@ useSeoMeta({
         </div>
       </section>
 
-      <!-- SECTION 3: Single-Counter Flow (Restaurant / Service Center) -->
-      <section class="rounded-3xl bg-white border border-slate-200/90 p-4 sm:p-7 shadow-lg shadow-slate-200/40 overflow-hidden">
+      <!-- SECTION 3: Single-Counter Flow (ร้านอาหาร และศูนย์บริการ) -->
+      <section id="restaurant-flow" class="rounded-3xl bg-white border border-slate-200/90 p-4 sm:p-7 shadow-lg shadow-slate-200/40 overflow-hidden">
         <div class="flex items-center justify-between mb-4 pb-3 border-b border-slate-100">
           <div>
-            <span class="text-xs font-bold uppercase tracking-wider text-amber-600 font-heading block">รูปแบบที่ 2: ช่องบริการเคาน์เตอร์เดี่ยว / ร้านอาหาร</span>
+            <span class="text-xs font-bold uppercase tracking-wider text-amber-600 font-heading block">การเรียกคิวแบบหนึ่งช่องบริการ</span>
             <h2 class="text-lg sm:text-xl font-bold font-heading text-[#171717]">ขั้นตอนการใช้งานระบบจัดคิว (ร้านอาหาร และศูนย์บริการ)</h2>
           </div>
           <button
@@ -233,6 +316,10 @@ useSeoMeta({
             </svg>
             <span>คลิกดูภาพเต็มจอ</span>
           </button>
+        </div>
+
+        <div class="p-4 rounded-2xl bg-amber-50/70 border border-amber-200/60 mb-5 text-xs sm:text-sm text-amber-950 font-medium">
+          <strong>การทำงานหน้าร้าน:</strong> เมื่อผู้รับบริการกดบัตรคิว เจ้าหน้าที่สามารถเรียกคิวเข้ารับบริการผ่าน Tablet / Smart Phone หน้าจอแสดงผล และมีระบบแจ้งเตือนโต๊ะที่กำลังจะครบกำหนดเวลา
         </div>
 
         <div
@@ -248,16 +335,41 @@ useSeoMeta({
 
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-6 pt-6 border-t border-slate-100 text-xs sm:text-sm">
           <div class="p-4 rounded-2xl bg-amber-50/70 border border-amber-100">
-            <span class="font-bold text-amber-950 block font-heading mb-1">1. หน้าจอออกบัตรคิว</span>
-            <p class="text-amber-900 text-xs">กดบัตรคิวที่หน้าร้านบน Tablet/Smart Phone หรือพิมพ์บัตรคิว ระบุชื่อลูกค้าและจำนวนที่นั่ง</p>
+            <span class="font-bold text-amber-950 block font-heading mb-1">1. กดบัตรคิวหน้าร้าน</span>
+            <p class="text-amber-900 text-xs">กดบัตรคิวที่หน้าร้านบน Tablet / Smart Phone หรือพิมพ์บัตรคิว (มีให้ใส่ชื่อลูกค้า และจำนวนที่นั่ง)</p>
           </div>
           <div class="p-4 rounded-2xl bg-amber-50/70 border border-amber-100">
             <span class="font-bold text-amber-950 block font-heading mb-1">2. จุดเรียกคิวเข้าใช้บริการ</span>
-            <p class="text-amber-900 text-xs">พนักงานเรียกคิวผ่าน Smart Phone/Tablet ระบุเบอร์โต๊ะ เช่น "เชิญคุณ วี หมายเลข 5 ที่โต๊ะ 7 ค่ะ"</p>
+            <p class="text-amber-900 text-xs">เจ้าหน้าที่จะเรียกคิวโดยใช้ Tablet / Smart Phone ผ่านหน้าจอแสดงผล เช่น "เชิญคุณ วี หมายเลข 5 ที่โต๊ะ 7 ค่ะ"</p>
           </div>
           <div class="p-4 rounded-2xl bg-amber-50/70 border border-amber-100">
-            <span class="font-bold text-amber-950 block font-heading mb-1">3. หน้าจอแสดงผลคิว & แจ้งเตือน</span>
-            <p class="text-amber-900 text-xs">แสดงสถานะคิวขึ้นจอ Monitor/Smart TV พร้อมระบบแจ้งเตือนโต๊ะที่กำลังจะครบกำหนดเวลา</p>
+            <span class="font-bold text-amber-950 block font-heading mb-1">3. หน้าจอแสดงผลคิว & แจ้งเตือนเวลา</span>
+            <p class="text-amber-900 text-xs">ลูกค้าดูจอแสดงคิวผ่านมือถือได้ทันที พร้อมระบบแจ้งเตือนโต๊ะที่กำลังจะครบกำหนดเวลาได้</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 4: Contact & Brochure Footer -->
+      <section class="p-6 sm:p-8 rounded-3xl bg-white border border-slate-200/90 shadow-sm text-left">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-6">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-wider text-[#16834A] font-heading block mb-1">สนใจสอบถามหรือติดตั้งระบบ</span>
+            <h3 class="font-heading font-bold text-lg text-[#171717]">i-Queue by Regist.ai ระบบบริหารคิวอัจฉริยะ</h3>
+            <p class="text-xs sm:text-sm text-slate-500 mt-1">ผู้ประสานงานโครงการ: คุณทวีวัตร์ ทรรศนะประทีป | โทร: 02-532-5151, 081-752-9549</p>
+          </div>
+          <div class="flex items-center gap-3 shrink-0">
+            <NuxtLink
+              to="/products/regist-ai-registration"
+              class="px-4 py-2.5 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs sm:text-sm font-semibold font-heading transition-colors"
+            >
+              ดูแผนผังการลงทะเบียน 3/6 ขั้นตอน →
+            </NuxtLink>
+            <NuxtLink
+              :to="{ path: '/contact', query: { product: 'regist-ai' } }"
+              class="px-5 py-2.5 rounded-full bg-[#16834A] hover:bg-[#106B3B] text-white text-xs sm:text-sm font-semibold font-heading shadow-md transition-all active:scale-95"
+            >
+              ติดต่อขอใบเสนอราคา
+            </NuxtLink>
           </div>
         </div>
       </section>
