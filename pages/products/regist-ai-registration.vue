@@ -107,42 +107,44 @@ useSeoMeta({
     <main class="wrap py-10 sm:py-14 space-y-10 sm:space-y-14 text-left">
 
       <!-- SECTION 1: High-Res Infographic Display with Zoom Feature -->
-      <section class="rounded-3xl bg-white border border-slate-200/90 p-4 sm:p-7 shadow-lg shadow-slate-200/40 overflow-hidden">
-        <div class="flex items-center justify-between mb-4 pb-3 border-b border-slate-100">
+      <section class="rounded-3xl bg-white border border-slate-200/90 p-5 sm:p-8 shadow-sm overflow-hidden text-left">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-6 pb-4 border-b border-slate-100">
           <div>
             <span class="text-xs font-bold uppercase tracking-wider text-[#16834A] font-heading block">แผนผังขั้นตอนกระบวนการ</span>
             <h2 class="text-lg sm:text-xl font-bold font-heading text-[#171717]">แผนผังขั้นตอนการลงทะเบียนออนไลน์ (Process Infographic)</h2>
           </div>
           <button
             type="button"
-            class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold font-heading transition-colors"
+            class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold font-heading transition-colors shrink-0"
             @click="openLightbox"
           >
             <svg class="w-4 h-4 text-[#16834A]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" />
             </svg>
-            <span>คลิกดูภาพเต็มจอ</span>
+            <span>คลิกดูภาพขยาย</span>
           </button>
         </div>
 
-        <!-- The Image Showcase with Hover Zoom Preview -->
-        <div
-          class="relative w-full rounded-2xl overflow-hidden bg-slate-50 border border-slate-200/80 cursor-pointer group shadow-inner"
-          @click="openLightbox"
-          title="คลิกเพื่อขยายภาพขนาดใหญ่"
-        >
-          <img
-            src="/images/products/regist-ai/regist-steps.jpg"
-            alt="ลงทะเบียนออนไลน์ง่ายๆ ด้วยตัวคุณเอง - Regist.ai"
-            class="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-[1.01]"
-          />
-          <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-            <span class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/95 text-[#171717] text-xs sm:text-sm font-bold font-heading shadow-xl">
-              <svg class="w-5 h-5 text-[#16834A]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" />
-              </svg>
-              <span>คลิกเพื่อดูภาพความละเอียดสูง (Full Screen)</span>
-            </span>
+        <!-- The Image Showcase: Centered, balanced & neat -->
+        <div class="flex justify-center">
+          <div
+            class="relative w-full max-w-3xl rounded-2xl overflow-hidden bg-gradient-to-b from-slate-50 to-slate-100/70 border border-slate-200/80 cursor-pointer group shadow-sm hover:shadow-md transition-all p-2 sm:p-3"
+            @click="openLightbox"
+            title="คลิกเพื่อขยายภาพขนาดใหญ่"
+          >
+            <img
+              src="/images/products/regist-ai/regist-steps.jpg"
+              alt="ลงทะเบียนออนไลน์ง่ายๆ ด้วยตัวคุณเอง - Regist.ai"
+              class="w-full max-h-[340px] sm:max-h-[380px] object-contain rounded-xl transition-transform duration-300 group-hover:scale-[1.01]"
+            />
+            <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl flex items-center justify-center">
+              <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/95 text-[#171717] text-xs sm:text-sm font-bold font-heading shadow-lg">
+                <svg class="w-4 h-4 text-[#16834A]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" />
+                </svg>
+                <span>คลิกเพื่อดูภาพขยาย</span>
+              </span>
+            </div>
           </div>
         </div>
 

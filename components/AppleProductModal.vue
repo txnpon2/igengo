@@ -234,9 +234,9 @@ onUnmounted(() => {
                   <div
                     v-for="(g, gIdx) in activeProduct.gallery"
                     :key="gIdx"
-                    class="group relative rounded-xl overflow-hidden border border-slate-200 aspect-[16/10] bg-slate-100 cursor-pointer shadow-xs hover:shadow-md transition-all"
+                    class="group relative rounded-xl overflow-hidden border border-slate-200 aspect-[16/10] bg-slate-50 p-1 cursor-pointer shadow-xs hover:shadow-md transition-all flex items-center justify-center"
                   >
-                    <img :src="g.image" :alt="g.title" class="w-full h-full object-cover group-hover:scale-105 transition-transform" />
+                    <img :src="g.image" :alt="g.title" class="w-full h-full object-contain group-hover:scale-105 transition-transform" />
                     <NuxtLink
                       v-if="g.link"
                       :to="g.link"
