@@ -218,17 +218,17 @@ useSeoMeta({
           </p>
         </div>
 
-        <!-- Core Process Diagrams (2 กระบวนการหลักตาม ISO 29110) -->
+        <!-- Core Process Diagrams / Architecture Modules -->
         <div v-if="post.diagrams && post.diagrams.length" class="my-12">
           <div class="text-center sm:text-left mb-6">
             <span class="inline-flex items-center gap-1 text-xs font-bold uppercase tracking-wider text-[#16834A] font-heading bg-[#16834A]/10 px-3 py-1 rounded-full mb-2">
-              ISO/IEC 29110 CORE PROCESSES
+              {{ post.diagramsSubtitle || 'CORE ARCHITECTURE & MODULES' }}
             </span>
             <h2 class="text-2xl sm:text-3xl font-extrabold font-heading text-[#171717]">
-              2 กระบวนการหลักตามมาตรฐาน <span class="text-gradient-emerald">ISO 29110</span>
+              {{ post.diagramsTitle || 'โครงสร้างและกระบวนการทำงานหลัก' }}
             </h2>
             <p class="text-sm sm:text-base text-slate-500 mt-1">
-              ผังแสดงกระบวนการทำงานที่เป็นระบบและได้มาตรฐานสากลของ บริษัท ไอเจนโก้ จำกัด
+              รายละเอียดโมดูลและสถาปัตยกรรมระบบที่ออกแบบอย่างเป็นระบบและได้มาตรฐานสากล
             </p>
           </div>
 
@@ -254,6 +254,7 @@ useSeoMeta({
                 </div>
 
                 <button
+                  v-if="diag.image"
                   type="button"
                   class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white border border-slate-200 text-xs font-semibold text-[#16834A] hover:bg-[#16834A] hover:text-white transition-all shadow-sm"
                   @click="openImagePreview(diag.image, diag.title, diag.caption)"
@@ -265,8 +266,9 @@ useSeoMeta({
                 </button>
               </div>
 
-              <!-- Diagram Image Display with Zoom capability -->
+              <!-- Diagram Image Display with Zoom capability (if image exists) -->
               <div
+                v-if="diag.image"
                 class="group relative overflow-hidden rounded-2xl bg-white border border-slate-200 shadow-sm p-3 sm:p-5 flex items-center justify-center cursor-pointer hover:border-[#16834A]/50 transition-all"
                 @click="openImagePreview(diag.image, diag.title, diag.caption)"
               >
@@ -342,8 +344,38 @@ useSeoMeta({
           </ul>
         </div>
 
+        <!-- System Specification Download CTA -->
+        <div v-if="post.downloadLink" class="my-10 p-6 sm:p-8 rounded-[24px] bg-gradient-to-r from-emerald-50 via-teal-50/40 to-white border-2 border-emerald-500/20 shadow-sm flex flex-col sm:flex-row items-center justify-between gap-6">
+          <div class="flex items-center gap-4 text-left">
+            <div class="w-14 h-14 rounded-2xl bg-[#16834A] text-white flex items-center justify-center shadow-md flex-shrink-0">
+              <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+            </div>
+            <div>
+              <h4 class="text-base sm:text-lg font-bold font-heading text-[#171717]">
+                {{ post.downloadLink.title }}
+              </h4>
+              <p class="text-xs sm:text-sm text-slate-500 mt-1">
+                {{ post.downloadLink.description || 'ดาวน์โหลดเอกสารคุณสมบัติและรายละเอียดสถาปัตยกรรมระบบฉบับเต็ม' }}
+              </p>
+            </div>
+          </div>
+          <a
+            :href="post.downloadLink.url"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#16834A] text-white font-heading font-bold text-sm shadow-md hover:bg-[#126b3c] hover:shadow-lg transition-all flex-shrink-0 w-full sm:w-auto"
+          >
+            <span>ดาวน์โหลดคุณสมบัติระบบ</span>
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+            </svg>
+          </a>
+        </div>
+
         <!-- Additional Photo Gallery (ภาพประกอบข่าวอื่น ๆ) -->
-        <div v-if="post.gallery && post.gallery.length && !post.diagrams" class="my-10">
+        <div v-if="post.gallery && post.gallery.length" class="my-10">
           <h3 class="text-xl font-bold font-heading text-[#171717] mb-4">
             ภาพประกอบข่าวและกิจกรรม
           </h3>
@@ -374,7 +406,8 @@ useSeoMeta({
               </span>
             </div>
             <p class="font-heading font-bold text-[#171717] text-sm sm:text-base">
-              {{ post.author ? `${post.author} — ` : '' }}บริษัท ไอเจนโก้ จำกัด (IGENCO Co., Ltd.)
+              {{ post.author ? `${post.author}` : 'บริษัท ไอเจนโก้ จำกัด (IGENCO Co., Ltd.)' }}
+              <span v-if="post.authorRole" class="text-xs font-normal text-slate-500 font-sans block sm:inline sm:ml-2">({{ post.authorRole }})</span>
             </p>
             <p class="text-xs text-slate-500">
               สอบถามข้อมูลหรือขอคำปรึกษาการพัฒนาระบบ: info@igenco.co.th | โทร 0-2523-3559

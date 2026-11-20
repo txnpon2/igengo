@@ -278,7 +278,7 @@ useSeoMeta({
             :key="idx"
             :to="item.link || '#'"
             class="group rounded-3xl bg-white border border-slate-200/90 overflow-hidden shadow-sm hover:shadow-xl hover:border-[#16834A]/50 transition-all duration-300 flex flex-col text-left cursor-pointer"
-            @click="!item.link ? openGalleryModal(item) : null"
+            @click="!item.link ? ($event.preventDefault(), openGalleryModal(item)) : null"
           >
             <!-- Image Thumbnail with Zoom Overlay -->
             <div class="relative aspect-[16/9] bg-gradient-to-b from-slate-50 to-slate-100/70 overflow-hidden flex items-center justify-center border-b border-slate-100 p-3 sm:p-4">

@@ -16,7 +16,18 @@ export interface Product {
   icon?: string
   adminFeatures?: string[]
   userFeatures?: string[]
+  gallerySubtitle?: string
   gallery?: { title: string; image: string; caption?: string; link?: string }[]
+  pillarsTitle?: string
+  pillarsDescription?: string
+  pillars?: {
+    code?: string
+    title: string
+    description: string
+    badgeClass?: string
+    badge?: string
+  }[]
+  closingSummary?: string
   externalUrl?: string
   contact?: { name: string; phone: string; email: string }
   brochures?: { title: string; url: string }[]
@@ -46,7 +57,7 @@ export interface InfoModalOptions {
 export interface PostDiagram {
   title: string
   caption?: string
-  image: string
+  image?: string
   figureNumber?: string
   highlights?: string[]
 }
@@ -66,6 +77,8 @@ export interface Post {
   imageCaption?: string
   publishedAt: string
   gallery?: string[]
+  diagramsTitle?: string
+  diagramsSubtitle?: string
   diagrams?: PostDiagram[]
   certBadge?: {
     image: string
@@ -75,6 +88,11 @@ export interface Post {
     details: string
   }
   highlights?: string[]
+  downloadLink?: {
+    title: string
+    url: string
+    description?: string
+  }
 }
 
 export interface CaseStudy {
