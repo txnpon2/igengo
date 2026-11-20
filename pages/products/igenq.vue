@@ -198,61 +198,65 @@ useSeoMeta({
           <span class="text-[#16834A] font-semibold">iGenQ</span>
         </nav>
 
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
           
           <!-- Left Content -->
           <div class="lg:col-span-7">
             
-            <!-- Badges -->
-            <div class="flex flex-wrap items-center gap-2 mb-4">
-              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#16834A]/10 text-[#16834A] text-xs font-heading font-bold uppercase tracking-wider border border-[#16834A]/20">
-                <span class="w-2 h-2 rounded-full bg-[#16834A] animate-pulse"></span>
-                iGenQ Smart Queue System
+            <!-- Modern Single Pill Badge -->
+            <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-emerald-50/90 border border-emerald-200 text-[#16834A] text-xs font-bold font-heading mb-5 shadow-xs">
+              <span class="relative flex h-2 w-2">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#16834A] opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-2 w-2 bg-[#16834A]"></span>
               </span>
-              <span class="px-3 py-1 rounded-full bg-slate-100 text-slate-600 text-xs font-heading font-medium border border-slate-200">
-                มาตรฐาน ISO/IEC 29110
-              </span>
-              <span class="px-3 py-1 rounded-full bg-emerald-50 text-[#16834A] text-xs font-heading font-medium border border-emerald-200/60">
-                Cloud SaaS 100%
-              </span>
-              <span class="px-3 py-1 rounded-full bg-slate-100 text-slate-600 text-xs font-heading font-medium border border-slate-200">
-                New Normal QR Code
-              </span>
+              <span>iGenQ · ระบบคิวอัจฉริยะบน Cloud</span>
+              <span class="text-emerald-300">|</span>
+              <span class="text-slate-500 font-medium text-[11px]">มาตรฐาน ISO/IEC 29110</span>
             </div>
 
-            <h1 class="text-3xl sm:text-5xl font-extrabold font-heading text-[#171717] tracking-tight leading-tight">
-              iGenQ <span class="text-[#16834A]">(ไอเจนคิว)</span>
-              <span class="block text-xl sm:text-2xl font-bold text-slate-700 mt-2 font-heading">
-                ระบบจัดการคิวอัจฉริยะรูปแบบใหม่ ไม่ต้องติดตั้ง App
+            <!-- Big Modern Headline -->
+            <h1 class="text-3xl sm:text-5xl lg:text-[3.25rem] font-black font-heading text-[#171717] tracking-tight leading-[1.15]">
+              ระบบจัดการคิวอัจฉริยะ
+              <span class="block bg-gradient-to-r from-[#16834A] via-emerald-600 to-teal-600 bg-clip-text text-transparent mt-1.5">
+                สแกนรับคิวง่าย ไม่ต้องโหลดแอป
               </span>
             </h1>
 
-            <p class="mt-4 text-base sm:text-lg text-slate-600 font-normal leading-relaxed">
-              ปฏิวัติการรอคิวด้วยระบบจัดการคิวบน <strong>Cloud Hosting 100%</strong> ผู้รับบริการสามารถสแกน QR Code เพื่อรับบัตรคิวดิจิทัล (e-Ticket) ผ่านโทรศัพท์มือถือ ตรวจสอบสถานะคิวแบบ Real-time และรับการแจ้งเตือนผ่าน <strong>LINE Notify</strong> โดยไม่ต้องยืนรอหน้าเคาน์เตอร์ ลดความแออัด ประหยัดต้นทุน และยกระดับการบริการสู่สากล
+            <!-- Punchy 1-2 sentence description (concise as requested) -->
+            <p class="mt-4 text-base sm:text-lg text-slate-600 font-normal leading-relaxed max-w-xl">
+              จัดการคิวดิจิทัลผ่านสมาร์ทโฟนบนระบบ Cloud 100% สแกน QR Code รับ e-Ticket เช็กสถานะ Real-time พร้อมแจ้งเตือนผ่าน LINE อัตโนมัติ
             </p>
 
-            <!-- Key Metric Pills -->
-            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 my-6 pt-2">
-              <div class="p-3 rounded-xl bg-slate-50 border border-slate-200 text-center">
-                <div class="text-xl sm:text-2xl font-bold font-heading text-[#16834A]">0 บาท</div>
-                <div class="text-xs text-slate-500 font-medium mt-0.5">ค่าเดินสาย & Server</div>
+            <!-- Sleek Feature Highlights (Minimal, modern style) -->
+            <div class="flex flex-wrap items-center gap-x-6 gap-y-2.5 my-6 pt-1 text-sm text-slate-700 font-medium">
+              <div class="inline-flex items-center gap-2">
+                <span class="w-5 h-5 rounded-full bg-emerald-100 flex items-center justify-center text-[#16834A] shrink-0">
+                  <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                  </svg>
+                </span>
+                <span><strong>0 บาท</strong> ค่าเซิร์ฟเวอร์ & เดินสาย</span>
               </div>
-              <div class="p-3 rounded-xl bg-slate-50 border border-slate-200 text-center">
-                <div class="text-xl sm:text-2xl font-bold font-heading text-[#16834A]">100%</div>
-                <div class="text-xs text-slate-500 font-medium mt-0.5">ไม่ต้องโหลดแอปพลิเคชัน</div>
+              <div class="inline-flex items-center gap-2">
+                <span class="w-5 h-5 rounded-full bg-emerald-100 flex items-center justify-center text-[#16834A] shrink-0">
+                  <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                  </svg>
+                </span>
+                <span>แจ้งเตือนผ่าน <strong>LINE Notify</strong></span>
               </div>
-              <div class="p-3 rounded-xl bg-slate-50 border border-slate-200 text-center">
-                <div class="text-xl sm:text-2xl font-bold font-heading text-[#16834A]">ไม่จำกัด</div>
-                <div class="text-xs text-slate-500 font-medium mt-0.5">ขยายเคาน์เตอร์บริการ</div>
-              </div>
-              <div class="p-3 rounded-xl bg-slate-50 border border-slate-200 text-center">
-                <div class="text-xl sm:text-2xl font-bold font-heading text-[#16834A]">Real-time</div>
-                <div class="text-xs text-slate-500 font-medium mt-0.5">แจ้งเตือน LINE Notify</div>
+              <div class="inline-flex items-center gap-2">
+                <span class="w-5 h-5 rounded-full bg-emerald-100 flex items-center justify-center text-[#16834A] shrink-0">
+                  <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                  </svg>
+                </span>
+                <span>จอ <strong>Smart TV</strong> ไร้สาย</span>
               </div>
             </div>
 
             <!-- Action Buttons -->
-            <div class="flex flex-wrap items-center gap-3 pt-2">
+            <div class="flex flex-wrap items-center gap-3 pt-1">
               <NuxtLink
                 to="/contact/sales"
                 class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-[#16834A] hover:bg-[#126b3c] text-white text-sm font-bold font-heading shadow-md shadow-[#16834A]/25 transition-all transform hover:-translate-y-0.5"
@@ -271,16 +275,16 @@ useSeoMeta({
                 <svg class="w-4 h-4 text-rose-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                 </svg>
-                <span>ดาวน์โหลด Proposal (PDF)</span>
+                <span>ดาวน์โหลด Proposal</span>
               </a>
 
               <a
                 href="https://app.igenq.com/igenq-client/index.php"
                 target="_blank"
                 rel="noopener"
-                class="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full bg-slate-100 hover:bg-slate-200 text-[#171717] text-sm font-semibold font-heading transition-all"
+                class="inline-flex items-center justify-center gap-1.5 px-4 py-3 text-slate-600 hover:text-[#16834A] text-sm font-semibold font-heading transition-colors"
               >
-                <span>เข้าสู่ระบบคิว iGenQ Web</span>
+                <span>เข้าสู่ระบบ iGenQ Web</span>
                 <svg class="w-3.5 h-3.5 opacity-60" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                 </svg>
@@ -293,9 +297,9 @@ useSeoMeta({
           <div class="lg:col-span-5">
             <div class="relative">
               
-              <!-- Main Slide Card with Next/Prev Controls -->
+              <!-- Main Slide Card with Sleek Glass Frame -->
               <div 
-                class="relative rounded-2xl overflow-hidden shadow-xl border border-slate-200/90 bg-white group cursor-pointer"
+                class="relative rounded-2xl overflow-hidden shadow-2xl shadow-slate-300/60 border border-slate-200/90 bg-white group cursor-pointer"
                 @click="openModal(galleryItems[currentSlide])"
               >
                 <!-- Aspect Ratio Container -->
@@ -304,19 +308,19 @@ useSeoMeta({
                     :key="galleryItems[currentSlide].image"
                     :src="galleryItems[currentSlide].image"
                     :alt="galleryItems[currentSlide].title"
-                    class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-102"
+                    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-102"
                   />
 
                   <!-- Slide Counter Badge (Top-Left) -->
                   <div class="absolute top-3 left-3 z-10 pointer-events-none">
-                    <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-900/80 backdrop-blur-md text-white text-xs font-bold font-heading shadow-md">
+                    <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-slate-900/75 backdrop-blur-md text-white text-[11px] font-bold font-heading shadow-md">
                       <span class="w-1.5 h-1.5 rounded-full bg-[#16834A]"></span>
                       {{ currentSlide + 1 }} / {{ galleryItems.length }}
                     </span>
                   </div>
 
                   <!-- Zoom Hint Badge (Top-Right) -->
-                  <div class="absolute top-3 right-3 z-10 pointer-events-none">
+                  <div class="absolute top-3 right-3 z-10 pointer-events-none opacity-80 group-hover:opacity-100 transition-opacity">
                     <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-white/90 backdrop-blur-md text-[#171717] text-[11px] font-bold font-heading shadow-md">
                       <svg class="w-3.5 h-3.5 text-[#16834A]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" />
@@ -326,13 +330,13 @@ useSeoMeta({
                   </div>
 
                   <!-- Hover Overlay -->
-                  <div class="absolute inset-0 bg-black/25 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none">
-                    <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/95 text-[#171717] text-xs font-bold font-heading shadow-lg">
+                  <div class="absolute inset-0 bg-slate-900/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none">
+                    <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/95 text-[#171717] text-xs font-bold font-heading shadow-lg">
                       <svg class="w-4 h-4 text-[#16834A]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                       </svg>
-                      คลิกเพื่อดูภาพขนาดเต็ม (Lightbox)
+                      คลิกเพื่อดูภาพเต็ม
                     </span>
                   </div>
                 </div>
@@ -342,9 +346,9 @@ useSeoMeta({
                   type="button"
                   aria-label="Previous Slide"
                   @click.stop="prevSlide"
-                  class="absolute left-2.5 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white/95 hover:bg-white text-slate-800 hover:text-[#16834A] shadow-lg border border-slate-200/80 flex items-center justify-center transition-all transform hover:scale-110 z-20 focus:outline-none focus:ring-2 focus:ring-[#16834A]"
+                  class="absolute left-2.5 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-white/90 backdrop-blur-md hover:bg-white text-slate-700 hover:text-[#16834A] shadow-md border border-slate-200/80 flex items-center justify-center transition-all transform hover:scale-105 z-20 focus:outline-none"
                 >
-                  <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7" />
                   </svg>
                 </button>
@@ -354,18 +358,19 @@ useSeoMeta({
                   type="button"
                   aria-label="Next Slide"
                   @click.stop="nextSlide"
-                  class="absolute right-2.5 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white/95 hover:bg-white text-slate-800 hover:text-[#16834A] shadow-lg border border-slate-200/80 flex items-center justify-center transition-all transform hover:scale-110 z-20 focus:outline-none focus:ring-2 focus:ring-[#16834A]"
+                  class="absolute right-2.5 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-white/90 backdrop-blur-md hover:bg-white text-slate-700 hover:text-[#16834A] shadow-md border border-slate-200/80 flex items-center justify-center transition-all transform hover:scale-105 z-20 focus:outline-none"
                 >
-                  <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7" />
                   </svg>
                 </button>
               </div>
 
-              <!-- Slide Title, Description & Indicators -->
-              <div class="mt-3.5 px-1">
-                <div class="flex items-center justify-between gap-3 mb-1">
-                  <h3 class="text-sm font-bold font-heading text-[#171717] line-clamp-1">
+              <!-- Sleek Dots & Thumbnail Navigation (Clean, No Clutter) -->
+              <div class="mt-3.5">
+                <!-- Current Slide Title & Minimal Dots -->
+                <div class="flex items-center justify-between gap-3 mb-2 px-0.5">
+                  <h3 class="text-xs font-bold font-heading text-slate-800 truncate">
                     {{ galleryItems[currentSlide].title }}
                   </h3>
                   
@@ -377,34 +382,25 @@ useSeoMeta({
                       type="button"
                       :aria-label="`ไปยังภาพที่ ${idx + 1}`"
                       @click="goToSlide(idx)"
-                      class="transition-all rounded-full h-2 focus:outline-none"
-                      :class="currentSlide === idx ? 'w-5 bg-[#16834A]' : 'w-2 bg-slate-300 hover:bg-slate-400'"
+                      class="transition-all rounded-full h-1.5 focus:outline-none"
+                      :class="currentSlide === idx ? 'w-4 bg-[#16834A]' : 'w-1.5 bg-slate-300 hover:bg-slate-400'"
                     ></button>
                   </div>
                 </div>
 
-                <p class="text-xs text-slate-500 line-clamp-2 leading-relaxed">
-                  {{ galleryItems[currentSlide].caption }}
-                </p>
-
-                <!-- Clickable Thumbnails Row -->
-                <div class="grid grid-cols-5 gap-2 mt-3 pt-2.5 border-t border-slate-200/70">
+                <!-- Compact Thumbnails Row -->
+                <div class="grid grid-cols-5 gap-1.5 pt-1">
                   <button
                     v-for="(item, idx) in galleryItems"
                     :key="idx"
                     type="button"
                     @click="goToSlide(idx)"
                     :aria-label="item.title"
-                    class="relative rounded-lg overflow-hidden border-2 transition-all aspect-[16/10] bg-slate-100 focus:outline-none"
-                    :class="currentSlide === idx ? 'border-[#16834A] ring-2 ring-[#16834A]/25 shadow-xs scale-102' : 'border-slate-200 opacity-60 hover:opacity-100'"
+                    class="relative rounded-lg overflow-hidden border transition-all aspect-[16/10] bg-slate-100 focus:outline-none"
+                    :class="currentSlide === idx ? 'border-[#16834A] ring-2 ring-[#16834A]/30 shadow-xs' : 'border-slate-200/80 opacity-60 hover:opacity-100'"
                   >
                     <img :src="item.image" :alt="item.title" class="w-full h-full object-cover" />
                   </button>
-                </div>
-
-                <div class="flex items-center justify-between text-[11px] text-slate-400 mt-2 px-0.5">
-                  <span>💡 กดลูกศร ‹ › หรือคลิกรูปย่อเพื่อเปลี่ยนรูป</span>
-                  <span>คลิกรูปใหญ่เพื่อขยาย</span>
                 </div>
               </div>
 
