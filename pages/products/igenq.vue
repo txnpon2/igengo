@@ -3,6 +3,7 @@ const { locale, t } = useLocale()
 
 // Lightbox state for expanding gallery / brochure images
 const activeModalImage = ref<{ title: string; image: string; caption?: string } | null>(null)
+const currentSlide = ref(0)
 
 function openModal(item: { title: string; image: string; caption?: string }) {
   activeModalImage.value = item
@@ -12,9 +13,41 @@ function closeModal() {
   activeModalImage.value = null
 }
 
+function prevSlide() {
+  currentSlide.value = (currentSlide.value - 1 + galleryItems.length) % galleryItems.length
+}
+
+function nextSlide() {
+  currentSlide.value = (currentSlide.value + 1) % galleryItems.length
+}
+
+function goToSlide(index: number) {
+  currentSlide.value = index
+}
+
+function prevModalImage() {
+  if (!activeModalImage.value) return
+  const currentIndex = galleryItems.findIndex(i => i.image === activeModalImage.value?.image)
+  const prevIdx = (currentIndex - 1 + galleryItems.length) % galleryItems.length
+  activeModalImage.value = galleryItems[prevIdx]
+}
+
+function nextModalImage() {
+  if (!activeModalImage.value) return
+  const currentIndex = galleryItems.findIndex(i => i.image === activeModalImage.value?.image)
+  const nextIdx = (currentIndex + 1) % galleryItems.length
+  activeModalImage.value = galleryItems[nextIdx]
+}
+
 function onKeyDown(e: KeyboardEvent) {
   if (e.key === 'Escape' && activeModalImage.value) {
     closeModal()
+  } else if (activeModalImage.value) {
+    if (e.key === 'ArrowLeft') prevModalImage()
+    if (e.key === 'ArrowRight') nextModalImage()
+  } else {
+    if (e.key === 'ArrowLeft') prevSlide()
+    if (e.key === 'ArrowRight') nextSlide()
   }
 }
 
@@ -351,27 +384,125 @@ useSeoMeta({
 
           </div>
 
-          <!-- Right Showcase Image / Video Poster -->
+          <!-- Right Showcase Image Carousel / Slider -->
           <div class="lg:col-span-5">
-            <div class="relative group cursor-pointer" @click="openModal(galleryItems[0])">
-              <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-slate-200 bg-white">
-                <img
-                  src="/images/products/igenq/banner-igenq-v4.jpg"
-                  alt="iGenQ Banner"
-                  class="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-102"
-                />
-                <div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                  <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/90 backdrop-blur-md text-[#171717] text-xs font-bold font-heading shadow-lg">
-                    <svg class="w-4 h-4 text-[#16834A]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" />
-                    </svg>
-                    คลิกเพื่อดูภาพขนาดใหญ่
-                  </span>
+            <div class="relative">
+              
+              <!-- Main Slide Card with Next/Prev Controls -->
+              <div 
+                class="relative rounded-2xl overflow-hidden shadow-xl border border-slate-200/90 bg-white group cursor-pointer"
+                @click="openModal(galleryItems[currentSlide])"
+              >
+                <!-- Aspect Ratio Container -->
+                <div class="relative aspect-[16/10] bg-slate-900/5 overflow-hidden flex items-center justify-center">
+                  <img
+                    :key="galleryItems[currentSlide].image"
+                    :src="galleryItems[currentSlide].image"
+                    :alt="galleryItems[currentSlide].title"
+                    class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-102"
+                  />
+
+                  <!-- Slide Counter Badge (Top-Left) -->
+                  <div class="absolute top-3 left-3 z-10 pointer-events-none">
+                    <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-900/80 backdrop-blur-md text-white text-xs font-bold font-heading shadow-md">
+                      <span class="w-1.5 h-1.5 rounded-full bg-[#16834A]"></span>
+                      {{ currentSlide + 1 }} / {{ galleryItems.length }}
+                    </span>
+                  </div>
+
+                  <!-- Zoom Hint Badge (Top-Right) -->
+                  <div class="absolute top-3 right-3 z-10 pointer-events-none">
+                    <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-white/90 backdrop-blur-md text-[#171717] text-[11px] font-bold font-heading shadow-md">
+                      <svg class="w-3.5 h-3.5 text-[#16834A]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" />
+                      </svg>
+                      ขยายภาพ
+                    </span>
+                  </div>
+
+                  <!-- Hover Overlay -->
+                  <div class="absolute inset-0 bg-black/25 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none">
+                    <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/95 text-[#171717] text-xs font-bold font-heading shadow-lg">
+                      <svg class="w-4 h-4 text-[#16834A]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                      </svg>
+                      คลิกเพื่อดูภาพขนาดเต็ม (Lightbox)
+                    </span>
+                  </div>
+                </div>
+
+                <!-- Floating Prev Button (Left) -->
+                <button
+                  type="button"
+                  aria-label="Previous Slide"
+                  @click.stop="prevSlide"
+                  class="absolute left-2.5 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white/95 hover:bg-white text-slate-800 hover:text-[#16834A] shadow-lg border border-slate-200/80 flex items-center justify-center transition-all transform hover:scale-110 z-20 focus:outline-none focus:ring-2 focus:ring-[#16834A]"
+                >
+                  <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7" />
+                  </svg>
+                </button>
+
+                <!-- Floating Next Button (Right) -->
+                <button
+                  type="button"
+                  aria-label="Next Slide"
+                  @click.stop="nextSlide"
+                  class="absolute right-2.5 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white/95 hover:bg-white text-slate-800 hover:text-[#16834A] shadow-lg border border-slate-200/80 flex items-center justify-center transition-all transform hover:scale-110 z-20 focus:outline-none focus:ring-2 focus:ring-[#16834A]"
+                >
+                  <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7" />
+                  </svg>
+                </button>
+              </div>
+
+              <!-- Slide Title, Description & Indicators -->
+              <div class="mt-3.5 px-1">
+                <div class="flex items-center justify-between gap-3 mb-1">
+                  <h3 class="text-sm font-bold font-heading text-[#171717] line-clamp-1">
+                    {{ galleryItems[currentSlide].title }}
+                  </h3>
+                  
+                  <!-- Dots Indicator -->
+                  <div class="flex items-center gap-1.5 shrink-0">
+                    <button
+                      v-for="(item, idx) in galleryItems"
+                      :key="idx"
+                      type="button"
+                      :aria-label="`ไปยังภาพที่ ${idx + 1}`"
+                      @click="goToSlide(idx)"
+                      class="transition-all rounded-full h-2 focus:outline-none"
+                      :class="currentSlide === idx ? 'w-5 bg-[#16834A]' : 'w-2 bg-slate-300 hover:bg-slate-400'"
+                    ></button>
+                  </div>
+                </div>
+
+                <p class="text-xs text-slate-500 line-clamp-2 leading-relaxed">
+                  {{ galleryItems[currentSlide].caption }}
+                </p>
+
+                <!-- Clickable Thumbnails Row -->
+                <div class="grid grid-cols-5 gap-2 mt-3 pt-2.5 border-t border-slate-200/70">
+                  <button
+                    v-for="(item, idx) in galleryItems"
+                    :key="idx"
+                    type="button"
+                    @click="goToSlide(idx)"
+                    :aria-label="item.title"
+                    class="relative rounded-lg overflow-hidden border-2 transition-all aspect-[16/10] bg-slate-100 focus:outline-none"
+                    :class="currentSlide === idx ? 'border-[#16834A] ring-2 ring-[#16834A]/25 shadow-xs scale-102' : 'border-slate-200 opacity-60 hover:opacity-100'"
+                  >
+                    <img :src="item.image" :alt="item.title" class="w-full h-full object-cover" />
+                  </button>
+                </div>
+
+                <div class="flex items-center justify-between text-[11px] text-slate-400 mt-2 px-0.5">
+                  <span>💡 กดลูกศร ‹ › หรือคลิกรูปย่อเพื่อเปลี่ยนรูป</span>
+                  <span>คลิกรูปใหญ่เพื่อขยาย</span>
                 </div>
               </div>
-              <p class="text-xs text-center text-slate-500 mt-2.5">
-                💡 คลิกที่รูปภาพเพื่อเปิดดูโบรชัวร์และแผนภาพขนาดเต็ม
-              </p>
+
             </div>
           </div>
 
@@ -676,61 +807,8 @@ useSeoMeta({
       </div>
     </section>
 
-    <!-- Section 5: Gallery & Infographics Showcase with Lightbox Modal -->
+    <!-- Section 5: Plans & Pricing (แพ็กเกจราคา) -->
     <section class="py-16 sm:py-20 bg-white border-b border-slate-200">
-      <div class="wrap">
-        
-        <div class="text-center max-w-3xl mx-auto mb-12">
-          <span class="inline-block px-3 py-1 rounded-full bg-slate-100 text-slate-600 text-xs font-heading font-bold uppercase tracking-wider mb-2">
-            Infographics & Media
-          </span>
-          <h2 class="text-2xl sm:text-4xl font-extrabold font-heading text-[#171717] tracking-tight">
-            แกลเลอรีภาพและแผนผังระบบ iGenQ
-          </h2>
-          <p class="mt-3 text-slate-600 text-sm sm:text-base">
-            คลิกที่ภาพเพื่อขยายดูรายละเอียดขนาดเต็ม โบรชัวร์แนะนำระบบ และหนังสือรับรองผลงาน
-          </p>
-        </div>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div
-            v-for="(item, idx) in galleryItems"
-            :key="idx"
-            class="group rounded-2xl border border-slate-200 bg-white overflow-hidden shadow-xs hover:shadow-lg transition-all cursor-pointer flex flex-col justify-between"
-            @click="openModal(item)"
-          >
-            <div class="relative overflow-hidden bg-slate-100 aspect-video">
-              <img
-                :src="item.image"
-                :alt="item.title"
-                class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-              />
-              <div class="absolute inset-0 bg-black/35 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/90 text-xs font-bold font-heading text-[#171717] shadow-md">
-                  <svg class="w-3.5 h-3.5 text-[#16834A]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" />
-                  </svg>
-                  ขยายดูภาพขนาดเต็ม
-                </span>
-              </div>
-            </div>
-
-            <div class="p-4 sm:p-5">
-              <h3 class="text-sm sm:text-base font-bold font-heading text-[#171717] group-hover:text-[#16834A] transition-colors leading-snug">
-                {{ item.title }}
-              </h3>
-              <p class="text-xs text-slate-500 mt-1.5 leading-relaxed line-clamp-2">
-                {{ item.caption }}
-              </p>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- Section 6: Plans & Pricing (แพ็กเกจราคา) -->
-    <section class="py-16 sm:py-20 bg-slate-50/70 border-b border-slate-200">
       <div class="wrap">
         
         <div class="text-center max-w-3xl mx-auto mb-14">
@@ -900,7 +978,7 @@ useSeoMeta({
         <div class="relative max-w-5xl w-full max-h-[92vh] flex flex-col bg-white rounded-2xl overflow-hidden shadow-2xl">
           <!-- Modal Header -->
           <div class="flex items-center justify-between px-6 py-4 border-b border-slate-100 bg-slate-50/80">
-            <div>
+            <div class="pr-4">
               <h3 class="text-base sm:text-lg font-bold font-heading text-[#171717]">
                 {{ activeModalImage.title }}
               </h3>
@@ -910,7 +988,7 @@ useSeoMeta({
             </div>
             <button
               type="button"
-              class="w-9 h-9 rounded-full bg-slate-200 hover:bg-slate-300 text-slate-700 flex items-center justify-center transition-colors shrink-0 ml-4"
+              class="w-9 h-9 rounded-full bg-slate-200 hover:bg-slate-300 text-slate-700 flex items-center justify-center transition-colors shrink-0 ml-2"
               @click="closeModal"
               aria-label="Close modal"
             >
@@ -918,13 +996,37 @@ useSeoMeta({
             </button>
           </div>
 
-          <!-- Modal Body Image -->
-          <div class="p-3 sm:p-4 overflow-auto flex items-center justify-center bg-slate-900/5 max-h-[calc(92vh-80px)]">
+          <!-- Modal Body Image with Prev/Next Controls -->
+          <div class="relative p-3 sm:p-4 overflow-auto flex items-center justify-center bg-slate-900/5 max-h-[calc(92vh-80px)] group">
             <img
               :src="activeModalImage.image"
               :alt="activeModalImage.title"
               class="max-w-full max-h-[75vh] object-contain rounded-lg shadow-md"
             />
+
+            <!-- Prev Button -->
+            <button
+              type="button"
+              aria-label="Previous image"
+              @click.stop="prevModalImage"
+              class="absolute left-4 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-black/60 hover:bg-black/85 text-white flex items-center justify-center shadow-lg transition-all transform hover:scale-110 focus:outline-none"
+            >
+              <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+
+            <!-- Next Button -->
+            <button
+              type="button"
+              aria-label="Next image"
+              @click.stop="nextModalImage"
+              class="absolute right-4 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-black/60 hover:bg-black/85 text-white flex items-center justify-center shadow-lg transition-all transform hover:scale-110 focus:outline-none"
+            >
+              <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
           </div>
         </div>
       </div>
