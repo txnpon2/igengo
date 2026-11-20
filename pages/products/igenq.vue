@@ -92,6 +92,35 @@ const galleryItems = [
   },
 ]
 
+// ข้อดีของ iGenQ ระบบบริหารคิวอัจฉริยะ (จากสื่อแนะนำอย่างเป็นทางการ)
+const coreAdvantages = [
+  {
+    num: '1',
+    title: 'ไม่ต้องซื้อ Server ไม่ต้องเดินสาย',
+    desc: 'เนื่องจากระบบติดตั้งและทำงานบน Cloud Hosting ใช้งานผ่านอินเทอร์เน็ตได้ทันที ประหยัดต้นทุนอุปกรณ์และค่าบำรุงรักษา',
+  },
+  {
+    num: '2',
+    title: 'ขยายจุดบริการ (Counter Service) ได้ไม่จำกัด',
+    desc: 'สามารถเพิ่มจุดบริการหรือเปิดเคาน์เตอร์บริการใหม่ได้ทันทีตามต้องการ โดยไม่ต้องติดตั้งอุปกรณ์เพิ่มเติม',
+  },
+  {
+    num: '3',
+    title: 'แสดงผลคิวที่เรียกบนจอทีวีไร้สาย',
+    desc: 'แสดงผลบนจอทีวี Google TV / Android TV คมชัดระดับ HD โดยเชื่อมต่อไร้สายผ่านระบบ Wi-Fi พร้อมเสียงเรียกคิวอัตโนมัติ',
+  },
+  {
+    num: '4',
+    title: 'สร้างฟอร์มแบบประเมินความพึงพอใจผูกกับจุดบริการได้',
+    desc: 'สามารถสร้างฟอร์มแบบประเมินความพึงพอใจผูกกับจุดบริการ (Counter Service) ให้ผู้รับบริการทำแบบประเมินผ่านมือถือได้ทันที',
+  },
+  {
+    num: '5',
+    title: 'เรียกคิวได้จากทุกอุปกรณ์ พร้อมแจ้งเตือน LINE Notify',
+    desc: 'สามารถเรียกคิวผ่านมือถือ / Tablet / PC / Notebook มีระบบแจ้งสถานะคิวที่ให้บริการปัจจุบัน อีกกี่คิวถึงคุณ และระยะเวลารอคอย พร้อมแจ้งเตือนทาง LINE Notify',
+  },
+]
+
 useSeoMeta({
   title: 'iGenQ (ไอเจนคิว) ระบบจัดการคิวอัจฉริยะแบบ New Normal | IGENCO',
   description: 'iGenQ ระบบบริหารคิวอัจฉริยะบน Cloud ทำงานง่ายผ่านสมาร์ทโฟน ไม่ต้องติดตั้งแอป สแกน QR Code รับ e-Ticket แจ้งเตือนผ่าน LINE Notify และแสดงผลบน Smart TV ไร้สาย พัฒนาโดย บริษัท ไอเจนโก้ จำกัด มาตรฐาน ISO/IEC 29110',
@@ -335,7 +364,142 @@ useSeoMeta({
       </div>
     </header>
 
-    <!-- Section 1: Contact & Support CTA -->
+    <!-- Section 1: New Normal Smart Queue System & Official Video Showcase -->
+    <section class="py-16 sm:py-24 bg-white border-b border-slate-200/80 relative overflow-hidden text-left">
+      <!-- Glow ambient decorative lights -->
+      <div class="absolute -top-24 left-1/4 w-80 h-80 bg-emerald-500/5 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute -bottom-24 right-1/4 w-80 h-80 bg-[#16834A]/5 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="wrap relative z-10">
+        
+        <!-- Section Header Area -->
+        <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+          <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-50 text-amber-700 text-xs font-bold font-heading uppercase tracking-wider border border-amber-200/80 mb-4 shadow-xs">
+            <span class="w-2 h-2 rounded-full bg-amber-500 animate-pulse"></span>
+            <span>กดบัตรคิวแบบ New Normal</span>
+          </div>
+
+          <h2 class="text-2xl sm:text-4xl font-extrabold font-heading text-[#171717] tracking-tight leading-tight">
+            ผู้ใช้งานสามารถสแกนคิวอาร์โค้ดร้านเพื่อกดบัตรคิวผ่านโทรศัพท์
+            <span class="block text-[#16834A] mt-2">
+              โดยไม่ต้องติดตั้งแอปบนมือถือ
+            </span>
+          </h2>
+          
+          <p class="mt-4 text-slate-600 text-sm sm:text-base leading-relaxed">
+            สัมผัสนวัตกรรมการบริการที่สะดวกรวดเร็ว ไร้สัมผัส (Touchless) และไร้กระดาษ (Paperless) ลูกค้ากดรับบัตรคิวได้ทันทีผ่านสมาร์ตโฟน พร้อมติดตามสถานะแบบ Real-time ได้จากทุกที่
+          </p>
+        </div>
+
+        <!-- 2 Columns Grid: 5 Core Advantages on Left, YouTube Video Showcase on Right -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+          
+          <!-- Left Column: Core Advantages List -->
+          <div class="lg:col-span-7 space-y-3.5">
+            
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-emerald-50 text-[#16834A] text-xs sm:text-sm font-bold font-heading border border-emerald-200/80 mb-1">
+              <span class="w-2 h-2 rounded-full bg-[#16834A]"></span>
+              <span>ข้อดีของ iGenQ ระบบบริหารคิวอัจฉริยะ</span>
+            </div>
+
+            <!-- 5 Item Cards -->
+            <div
+              v-for="adv in coreAdvantages"
+              :key="adv.num"
+              class="group rounded-2xl border border-slate-200/90 bg-slate-50/60 hover:bg-white p-4 sm:p-5 transition-all duration-300 hover:shadow-md hover:border-[#16834A]/50 hover:-translate-y-0.5"
+            >
+              <div class="flex items-start gap-3.5 sm:gap-4">
+                <!-- Number Circle Badge -->
+                <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-white group-hover:bg-[#16834A] text-[#16834A] group-hover:text-white font-extrabold font-heading text-sm sm:text-base flex items-center justify-center shrink-0 border border-slate-200/90 group-hover:border-[#16834A] shadow-xs transition-all">
+                  {{ adv.num }}
+                </div>
+
+                <!-- Text Info -->
+                <div class="flex-1 min-w-0">
+                  <h3 class="text-sm sm:text-base font-bold font-heading text-[#171717] group-hover:text-[#16834A] transition-colors leading-snug">
+                    {{ adv.title }}
+                  </h3>
+                  <p class="text-xs sm:text-sm text-slate-600 mt-1 leading-relaxed">
+                    {{ adv.desc }}
+                  </p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Right Column: Official YouTube Video Player Frame -->
+          <div class="lg:col-span-5">
+            <div class="relative">
+              
+              <!-- Device Frame Container -->
+              <div class="rounded-2xl overflow-hidden shadow-2xl border border-slate-200 bg-slate-900">
+                
+                <!-- Mac-style Window Top Bar -->
+                <div class="px-4 py-3 bg-slate-800/90 border-b border-slate-700/80 flex items-center justify-between">
+                  <div class="flex items-center gap-1.5">
+                    <span class="w-2.5 h-2.5 rounded-full bg-rose-500"></span>
+                    <span class="w-2.5 h-2.5 rounded-full bg-amber-500"></span>
+                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+                    <span class="text-[11px] font-medium text-slate-300 ml-2 font-mono">iGenQ System Video</span>
+                  </div>
+                  <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-rose-500/20 text-rose-300 text-[10px] font-bold">
+                    <span class="w-1.5 h-1.5 rounded-full bg-rose-500 animate-pulse"></span>
+                    YouTube HD
+                  </span>
+                </div>
+
+                <!-- Responsive 16:9 Video Embed -->
+                <div class="relative aspect-video w-full bg-black">
+                  <iframe
+                    src="https://www.youtube-nocookie.com/embed/sR7L1oThLOA?rel=0"
+                    title="ไอเจนคิว (iGenQ): ระบบจัดการคิวอัจฉริยะ i-Regist By IGENCO"
+                    class="w-full h-full border-0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen
+                    loading="lazy"
+                  ></iframe>
+                </div>
+
+                <!-- Video Title & Description Underneath -->
+                <div class="p-4 bg-slate-900 text-white text-left">
+                  <div class="flex items-center justify-between gap-2">
+                    <h4 class="text-xs sm:text-sm font-bold font-heading text-slate-100 line-clamp-1">
+                      ไอเจนคิว (iGenQ): ระบบจัดการคิวอัจฉริยะ i-Regist By IGENCO
+                    </h4>
+                  </div>
+                  <p class="text-[11px] text-slate-400 mt-1 line-clamp-2 leading-relaxed">
+                    ระบบคิวแบบ New Normal ใช้งานได้ทันทีโดยไม่ต้องติดตั้ง App สแกน QR Code รับ e-Ticket ดูสถานะบนมือถือ พร้อมแจ้งเตือนผ่าน LINE Notify และแสดงผลบน Android/Google TV
+                  </p>
+                </div>
+
+              </div>
+
+              <!-- Quick Video Feature Badges -->
+              <div class="grid grid-cols-3 gap-2.5 mt-3 text-center">
+                <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200">
+                  <span class="block text-xs font-bold text-[#16834A] font-heading">New Normal</span>
+                  <span class="block text-[10px] text-slate-500 mt-0.5">สแกน QR ผ่านมือถือ</span>
+                </div>
+                <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200">
+                  <span class="block text-xs font-bold text-[#16834A] font-heading">LINE Notify</span>
+                  <span class="block text-[10px] text-slate-500 mt-0.5">แจ้งเตือน Real-time</span>
+                </div>
+                <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200">
+                  <span class="block text-xs font-bold text-[#16834A] font-heading">Smart TV</span>
+                  <span class="block text-[10px] text-slate-500 mt-0.5">เชื่อมต่อ Wi-Fi ไร้สาย</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Section 2: Contact & Support CTA -->
     <section class="py-16 sm:py-20 bg-gradient-to-b from-white to-slate-100 border-t border-slate-200 text-center">
       <div class="wrap max-w-4xl mx-auto">
         <span class="inline-block px-3 py-1 rounded-full bg-[#16834A]/10 text-[#16834A] text-xs font-heading font-bold uppercase tracking-wider mb-3">
