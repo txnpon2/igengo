@@ -133,8 +133,8 @@ const heroContent = computed(() => ({
           <span>{{ heroContent.headline }}</span>
         </h1>
 
-        <!-- Subheadline: เทคโนโลยีดิจิทัล เพื่อองค์กรยุคใหม่ (Luminous Emerald Glow Gradient) -->
-        <p class="mt-3 sm:mt-4 text-2xl sm:text-3xl lg:text-[40px] font-bold font-heading text-transparent bg-clip-text bg-gradient-to-r from-emerald-300 via-green-200 to-emerald-400 tracking-tight leading-snug drop-shadow-sm">
+        <!-- Subheadline: เทคโนโลยีดิจิทัล เพื่อองค์กรยุคใหม่ (Solid 100% Opaque, Full & Crisp) -->
+        <p class="mt-3 sm:mt-4 text-2xl sm:text-3xl lg:text-[42px] font-extrabold font-heading text-emerald-300 tracking-tight leading-snug drop-shadow-[0_4px_20px_rgba(0,0,0,0.6)]">
           {{ heroContent.subheadline }}
         </p>
 
@@ -144,29 +144,6 @@ const heroContent = computed(() => ({
         </p>
       </div>
     </div>
-
-    <!-- Previous / Next Navigation Arrows on Carousel Edges (Hidden on mobile, visible on sm and up) -->
-    <button
-      type="button"
-      aria-label="Previous Slide"
-      class="hidden sm:flex absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 z-30 h-11 w-11 sm:h-14 sm:w-14 items-center justify-center rounded-full bg-black/30 text-white/90 backdrop-blur-md hover:bg-[#16834A] hover:text-white transition-all focus:outline-none shadow-lg active:scale-95"
-      @click="handlePrev"
-    >
-      <svg class="w-6 h-6 sm:w-7 sm:h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7" />
-      </svg>
-    </button>
-
-    <button
-      type="button"
-      aria-label="Next Slide"
-      class="hidden sm:flex absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 z-30 h-11 w-11 sm:h-14 sm:w-14 items-center justify-center rounded-full bg-black/30 text-white/90 backdrop-blur-md hover:bg-[#16834A] hover:text-white transition-all focus:outline-none shadow-lg active:scale-95"
-      @click="handleNext"
-    >
-      <svg class="w-6 h-6 sm:w-7 sm:h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7" />
-      </svg>
-    </button>
 
     <!-- Pagination Dots at Bottom Center -->
     <div class="relative z-30 pb-6 sm:pb-8 lg:pb-10 flex justify-center items-center gap-2.5 pointer-events-auto">
