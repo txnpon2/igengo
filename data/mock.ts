@@ -372,10 +372,12 @@ export const posts: Post[] = [
     imageCaption: 'พิธีปิดโครงการและมอบใบรับรอง โครงการส่งเสริมให้ผู้ประกอบการได้รับมาตรฐาน ISO 29110 ปี 2559 โดย สำนักงานส่งเสริมอุตสาหกรรมซอฟต์แวร์แห่งชาติ (องค์การมหาชน) SIPA ร่วมกับ กลุ่มฯเทคโนโลยีสารสนเทศ สภาอุตสาหกรรมแห่งประเทศไทย และ TUV NORD (Thailand) Ltd.',
     certBadge: {
       image: '/images/news/tuv-nord-iso-29110-logo.png',
-      title: 'TUV NORD (Thailand) Ltd.',
-      organization: 'TUV NORD Certification Body',
+      title: 'การรับรองคุณภาพมาตรฐานสากล ISO/IEC 29110:2011',
+      organization: 'TUV NORD (Thailand) Ltd.',
       standard: 'ISO/IEC 29110:2011',
+      subBadge: 'ผ่านการประเมิน 2 ปีซ้อน',
       details: 'ผ่านการประเมินรับรองมาตรฐานต่อเนื่อง 2 ปีซ้อน ครอบคลุมกระบวนการ Software Management จนถึง Software Implementation Process',
+      points: ['Software Management', 'Software Implementation Process', 'VSE (Very Small Enterprises)'],
     },
     diagrams: [
       {
@@ -494,7 +496,9 @@ HRIS (Human Resource Information System) หรือ HRMS (Human Resource Manag
       title: 'รางวัล The Winner — OIIO Thailand Techland 2019',
       organization: 'OIIO Thailand Techland 2019 (05-06 November 2019)',
       standard: 'THE WINNER AWARD',
+      subBadge: 'Thailand Techland 2019',
       details: 'รางวัลแห่งความภาคภูมิใจถึงความสำเร็จของการเปลี่ยนแปลงองค์กร และเป็นแบบอย่างให้กับสังคมไทยในยุคดิจิทัลไทยแลนด์ 4.0 อย่างแท้จริง',
+      points: ['รางวัลชนะเลิศ The Winner', 'Digital Thailand 4.0', 'ระบบบริหารทรัพยากรมนุษย์ (i-Huris)'],
     },
     diagramsTitle: '4 ระบบหลักและโมดูลย่อยของระบบบริหารทรัพยากรมนุษย์ (i-Huris)',
     diagramsSubtitle: 'ENTERPRISE ARCHITECTURE & MODULES',

@@ -174,34 +174,32 @@ useSeoMeta({
             </span>
           </div>
 
-          <!-- Certificate Info -->
+          <!-- Certificate / Award Info -->
           <div class="flex-1 text-center sm:text-left">
             <div class="flex flex-wrap items-center justify-center sm:justify-start gap-2 mb-2">
               <span class="px-3 py-0.5 rounded-full text-[11px] font-bold bg-[#16834A] text-white">
                 {{ post.certBadge.standard }}
               </span>
-              <span class="px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-[#16834A]/10 text-[#16834A]">
-                ผ่านการประเมิน 2 ปีซ้อน
+              <span v-if="post.certBadge.subBadge" class="px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-[#16834A]/10 text-[#16834A]">
+                {{ post.certBadge.subBadge }}
               </span>
-              <span class="px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-slate-100 text-slate-600">
-                TUV NORD (Thailand)
+              <span v-if="post.certBadge.organization" class="px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-slate-100 text-slate-600">
+                {{ post.certBadge.organization }}
               </span>
             </div>
             <h3 class="text-lg sm:text-xl font-bold font-heading text-[#171717] mb-2">
-              การรับรองคุณภาพมาตรฐานสากล {{ post.certBadge.standard }}
+              {{ post.certBadge.title }}
             </h3>
             <p class="text-sm text-slate-600 leading-relaxed">
               {{ post.certBadge.details }}
             </p>
-            <div class="mt-4 pt-3 border-t border-slate-100 flex flex-wrap items-center justify-center sm:justify-start gap-4 text-xs text-slate-500">
-              <span class="flex items-center gap-1 font-medium text-[#16834A]">
-                ✓ Software Management
-              </span>
-              <span class="flex items-center gap-1 font-medium text-[#16834A]">
-                ✓ Software Implementation Process
-              </span>
-              <span class="flex items-center gap-1 font-medium text-[#16834A]">
-                ✓ VSE (Very Small Enterprises)
+            <div v-if="post.certBadge.points && post.certBadge.points.length" class="mt-4 pt-3 border-t border-slate-100 flex flex-wrap items-center justify-center sm:justify-start gap-4 text-xs text-slate-500">
+              <span
+                v-for="(pt, pIdx) in post.certBadge.points"
+                :key="pIdx"
+                class="flex items-center gap-1 font-medium text-[#16834A]"
+              >
+                ✓ {{ pt }}
               </span>
             </div>
           </div>

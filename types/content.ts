@@ -83,9 +83,11 @@ export interface Post {
   certBadge?: {
     image: string
     title: string
-    organization: string
+    organization?: string
     standard: string
+    subBadge?: string
     details: string
+    points?: string[]
   }
   highlights?: string[]
   downloadLink?: {
