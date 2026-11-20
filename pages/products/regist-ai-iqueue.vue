@@ -308,7 +308,7 @@ useSeoMeta({
                 ขั้นตอนการใช้งานระบบจัดคิว (ร้านอาหาร และศูนย์บริการ)
               </h3>
               <p class="text-xs sm:text-sm text-slate-500 mt-1.5 leading-relaxed">
-                การเรียกคิวแบบหนึ่งช่องบริการ กดบัตรคิวหน้าร้านบน Tablet/มือถือ เจ้าหน้าที่เรียกคิวระบุโต๊ะ และแจ้งเตือนเวลา
+                การเรียกคิวแบบหนึ่งช่องบริการ เช่น การจัดคิวแบบร้านอาหาร เมื่อผู้รับบริการกดบัตรคิว เจ้าหน้าที่สามารถเรียกคิวเข้ารับบริการได้
               </p>
             </div>
             <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-amber-600">

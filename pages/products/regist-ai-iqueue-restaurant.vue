@@ -76,7 +76,7 @@ useSeoMeta({
               ขั้นตอนการใช้งานระบบจัดคิว (ร้านอาหาร)
             </h1>
             <p class="mt-3 text-sm sm:text-base text-slate-600 font-normal leading-relaxed">
-              ระบบบริหารจัดการคิวสำหรับร้านอาหารและคาเฟ่ ให้ลูกค้ากดบัตรคิว ระบุชื่อและจำนวนที่นั่งผ่าน Tablet หรือ Smart Phone เจ้าหน้าที่เรียกคิวระบุหมายเลขโต๊ะอัตโนมัติ พร้อมระบบแจ้งเตือนระยะเวลาการใช้บริการ
+              การเรียกคิวแบบหนึ่งช่องบริการ เช่น การจัดคิวแบบร้านอาหาร เมื่อผู้รับบริการกดบัตรคิว เจ้าหน้าที่สามารถเรียกคิวเข้ารับบริการได้ สะดวกรวดเร็วผ่าน Tablet หรือ Smart Phone
             </p>
           </div>
 
@@ -147,6 +147,31 @@ useSeoMeta({
               </span>
             </div>
           </div>
+        </div>
+
+        <!-- Highlight Summary Box -->
+        <div class="max-w-3xl mx-auto mt-6 p-5 sm:p-6 rounded-2xl bg-amber-50/70 border border-amber-200/80 text-amber-950">
+          <div class="flex items-center gap-2.5 mb-2">
+            <span class="flex h-7 w-7 items-center justify-center rounded-lg bg-amber-500 text-white font-bold text-xs">iQ</span>
+            <h3 class="font-heading font-bold text-base sm:text-lg text-amber-950">การเรียกคิวแบบหนึ่งช่องบริการ (ร้านอาหาร)</h3>
+          </div>
+          <p class="text-xs sm:text-sm text-slate-600 mb-4 leading-relaxed">
+            การเรียกคิวแบบหนึ่งช่องบริการ เช่น การจัดคิวแบบร้านอาหาร เมื่อผู้รับบริการกดบัตรคิว เจ้าหน้าที่สามารถเรียกคิวเข้ารับบริการได้
+          </p>
+          <ul class="space-y-2.5 text-xs sm:text-sm text-slate-700">
+            <li class="flex items-start gap-2.5">
+              <span class="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-amber-500 text-white text-xs font-bold mt-0.5">✓</span>
+              <span><strong>กดบัตรคิวที่หน้าร้าน:</strong> กดบัตรคิวหน้าร้านบน Tablet / Smart Phone หรือพิมพ์บัตรคิว (มีให้ใส่ชื่อลูกค้า และจำนวนที่นั่ง)</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-amber-500 text-white text-xs font-bold mt-0.5">✓</span>
+              <span><strong>เจ้าหน้าที่เรียกคิว:</strong> เจ้าหน้าที่จะเรียกคิวโดยใช้ Tablet / Smart Phone ผ่านหน้าจอแสดงผล พร้อมระบุเบอร์โต๊ะ</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-amber-500 text-white text-xs font-bold mt-0.5">✓</span>
+              <span><strong>ระบบแจ้งเตือนโต๊ะ:</strong> ระบบแจ้งเตือนโต๊ะที่กำลังจะครบกำหนดเวลาได้ ช่วยควบคุมรอบโต๊ะได้อย่างมีประสิทธิภาพ</span>
+            </li>
+          </ul>
         </div>
       </section>
 
