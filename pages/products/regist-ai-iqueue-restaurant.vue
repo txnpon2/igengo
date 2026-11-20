@@ -175,84 +175,125 @@ useSeoMeta({
         </div>
       </section>
 
-      <!-- SECTION 2: 3 Core Steps in Restaurant Flow -->
+      <!-- SECTION 2: 4 Core Steps in Restaurant Flow -->
       <section class="space-y-6 text-left">
         <div>
-          <span class="text-xs font-bold uppercase tracking-wider text-amber-700 font-heading block mb-1">กระบวนการ 3 ขั้นตอน</span>
-          <h2 class="text-2xl sm:text-3xl font-extrabold font-heading text-[#171717]">ขั้นตอนการจัดคิวหน้าร้านอาหาร (Step-by-Step)</h2>
+          <span class="text-xs font-bold uppercase tracking-wider text-amber-700 font-heading block mb-1">กระบวนการ 4 ขั้นตอน</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold font-heading text-[#171717]">ขั้นตอนการใช้งานระบบจัดคิว (ร้านอาหาร)</h2>
+          <p class="text-xs sm:text-sm text-slate-500 mt-1">กระบวนการทำงานที่ราบรื่นตั้งแต่ลูกค้าเดินทางมาถึงหน้าร้านจนถึงการจัดสรรโต๊ะอาหาร</p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           
-          <!-- Step 1 -->
-          <div class="p-6 rounded-3xl bg-white border border-slate-200/90 shadow-sm flex flex-col justify-between">
+          <!-- ขั้นตอนที่ 1 -->
+          <div class="p-6 rounded-3xl bg-white border border-slate-200/90 shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
             <div>
               <div class="flex items-center justify-between mb-4">
                 <span class="px-3 py-1 rounded-full bg-amber-50 text-amber-800 text-xs font-bold font-heading border border-amber-200">ขั้นตอนที่ 1</span>
-                <span class="text-slate-400 text-xs font-heading">Tablet / Mobile</span>
+                <span class="text-slate-400 text-xs font-heading">หน้าร้าน</span>
               </div>
-              <h3 class="font-heading font-bold text-lg text-[#171717] mb-2">กดบัตรคิวหน้าร้าน / พิมพ์บัตรคิว</h3>
-              <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-3">
-                ลูกค้ากดบัตรคิวที่หน้าร้านบน Tablet หรือ Smart Phone พร้อมระบุชื่อลูกค้าและจำนวนที่นั่ง
-              </p>
-              <div class="p-3.5 rounded-2xl bg-amber-50/60 border border-amber-200/60 text-xs text-amber-950 space-y-1">
-                <div class="font-bold flex items-center gap-1.5">
-                  <span class="w-1.5 h-1.5 rounded-full bg-amber-600"></span>
-                  หน้าจอออกบัตรคิว (ใช้ Tablet)
-                </div>
-                <p class="text-slate-600">ตอนกดบัตรคิวจะมีช่องให้ระบุชื่อลูกค้า จำนวนที่นั่ง และสามารถดูจอเรียกคิวที่ระบุเบอร์โต๊ะได้ทันที</p>
-              </div>
+              <h3 class="font-heading font-bold text-lg text-[#171717] mb-3">การรับบัตรคิว</h3>
+              <ul class="text-xs sm:text-sm text-slate-600 space-y-2.5 leading-relaxed">
+                <li class="flex items-start gap-2">
+                  <span class="text-amber-600 font-bold mt-0.5">•</span>
+                  <span>ลูกค้ากดรับบัตรคิวผ่าน Tablet / Smart Phone หรือพิมพ์บัตรคิวผ่านเครื่องพิมพ์</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-amber-600 font-bold mt-0.5">•</span>
+                  <span>กรอกชื่อลูกค้าและจำนวนที่นั่งที่ต้องการ</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-amber-600 font-bold mt-0.5">•</span>
+                  <span>ระบบออกหมายเลขคิวให้ลูกค้าเพื่อรอรับบริการ</span>
+                </li>
+              </ul>
             </div>
-            <div class="mt-4 pt-3 border-t border-slate-100 text-[11px] text-amber-800 font-semibold">
-              ✓ ลูกค้าจองคิวสะดวก ไม่ต้องยืนออหน้าร้าน
+            <div class="mt-4 pt-3 border-t border-slate-100 text-[11px] text-amber-800 font-semibold flex items-center gap-1.5">
+              <span>✓ รับบัตรคิวและระบุจำนวนที่นั่ง</span>
             </div>
           </div>
 
-          <!-- Step 2 -->
-          <div class="p-6 rounded-3xl bg-white border border-slate-200/90 shadow-sm flex flex-col justify-between">
+          <!-- ขั้นตอนที่ 2 -->
+          <div class="p-6 rounded-3xl bg-white border border-slate-200/90 shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
             <div>
               <div class="flex items-center justify-between mb-4">
                 <span class="px-3 py-1 rounded-full bg-purple-50 text-purple-700 text-xs font-bold font-heading border border-purple-200">ขั้นตอนที่ 2</span>
-                <span class="text-slate-400 text-xs font-heading">เคาน์เตอร์พนักงาน</span>
+                <span class="text-slate-400 text-xs font-heading">เคาน์เตอร์บริการ</span>
               </div>
-              <h3 class="font-heading font-bold text-lg text-[#171717] mb-2">จุดเรียกคิวเข้าใช้บริการ</h3>
-              <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-3">
-                พนักงานกดเรียกคิวผ่าน Smart Phone หรือ Tablet ประจำเคาน์เตอร์ เพื่อจัดสรรโต๊ะอาหารที่ว่าง
-              </p>
-              <div class="p-3.5 rounded-2xl bg-purple-50/60 border border-purple-200/60 text-xs text-purple-950 space-y-1">
-                <div class="font-bold flex items-center gap-1.5">
-                  <span class="w-1.5 h-1.5 rounded-full bg-purple-600"></span>
-                  หน้าจอเรียกคิว (ใช้ Notebook / PC / Tablet)
-                </div>
-                <p class="text-slate-600">รองรับระบบแจ้งเตือนโต๊ะที่กำลังจะครบกำหนดเวลาได้ เช่น 1 ชั่วโมง บน Tablet หรือ Smart Phone</p>
-              </div>
+              <h3 class="font-heading font-bold text-lg text-[#171717] mb-3">การเรียกคิว</h3>
+              <ul class="text-xs sm:text-sm text-slate-600 space-y-2.5 leading-relaxed">
+                <li class="flex items-start gap-2">
+                  <span class="text-purple-600 font-bold mt-0.5">•</span>
+                  <span>เจ้าหน้าที่เรียกคิวผ่าน Tablet / Smart Phone</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-purple-600 font-bold mt-0.5">•</span>
+                  <span>ระบบแสดงหมายเลขคิวที่กำลังเรียกบนหน้าจอแสดงผล</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-purple-600 font-bold mt-0.5">•</span>
+                  <span>ลูกค้าสามารถตรวจสอบหมายเลขคิวของตนเองและรอเข้ารับบริการ</span>
+                </li>
+              </ul>
             </div>
-            <div class="mt-4 pt-3 border-t border-slate-100 text-[11px] text-purple-700 font-semibold">
-              ✓ ควบคุมรอบโต๊ะ Turn-over ได้อย่างแม่นยำ
+            <div class="mt-4 pt-3 border-t border-slate-100 text-[11px] text-purple-700 font-semibold flex items-center gap-1.5">
+              <span>✓ แสดงผลและแจ้งเตือน Real-time</span>
             </div>
           </div>
 
-          <!-- Step 3 -->
-          <div class="p-6 rounded-3xl bg-white border border-slate-200/90 shadow-sm flex flex-col justify-between">
+          <!-- ขั้นตอนที่ 3 -->
+          <div class="p-6 rounded-3xl bg-white border border-slate-200/90 shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
             <div>
               <div class="flex items-center justify-between mb-4">
                 <span class="px-3 py-1 rounded-full bg-emerald-50 text-[#16834A] text-xs font-bold font-heading border border-emerald-200/60">ขั้นตอนที่ 3</span>
-                <span class="text-slate-400 text-xs font-heading">Smart TV / จอกลาง</span>
+                <span class="text-slate-400 text-xs font-heading">จัดสรรโต๊ะ</span>
               </div>
-              <h3 class="font-heading font-bold text-lg text-[#171717] mb-2">หน้าจอแสดงผลคิว & เสียงเรียก</h3>
-              <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-3">
-                จอแสดงผลคิวสำหรับลูกค้า พร้อมระบบกระจายเสียงเรียกคิวที่สามารถระบุหมายเลขโต๊ะได้ชัดเจน
-              </p>
-              <div class="p-3.5 rounded-2xl bg-emerald-50/60 border border-emerald-200/60 text-xs text-emerald-950 space-y-1">
-                <div class="font-bold flex items-center gap-1.5">
-                  <span class="w-1.5 h-1.5 rounded-full bg-[#16834A]"></span>
-                  เสียงและจอเรียกคิวระบุเบอร์โต๊ะ
-                </div>
-                <p class="text-slate-600">ตัวอย่าง: "เชิญคุณ วี หมายเลข 5 ที่โต๊ะ 7 ค่ะ" แสดงผลบน PC, Monitor หรือ Smart TV</p>
-              </div>
+              <h3 class="font-heading font-bold text-lg text-[#171717] mb-3">การเข้ารับบริการ</h3>
+              <ul class="text-xs sm:text-sm text-slate-600 space-y-2.5 leading-relaxed">
+                <li class="flex items-start gap-2">
+                  <span class="text-[#16834A] font-bold mt-0.5">•</span>
+                  <span>เมื่อลูกค้าถึงคิว เจ้าหน้าที่จะจัดโต๊ะให้ตามจำนวนที่นั่ง</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-[#16834A] font-bold mt-0.5">•</span>
+                  <span>เจ้าหน้าที่กดยืนยันการเข้ารับบริการผ่านระบบ</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-[#16834A] font-bold mt-0.5">•</span>
+                  <span>ระบบอัปเดตสถานะคิวเพื่อรองรับลูกค้าคิวถัดไป</span>
+                </li>
+              </ul>
             </div>
-            <div class="mt-4 pt-3 border-t border-slate-100 text-[11px] text-[#16834A] font-semibold">
-              ✓ ลูกค้าเดินเข้าโต๊ะได้ถูกต้อง รวดเร็ว
+            <div class="mt-4 pt-3 border-t border-slate-100 text-[11px] text-[#16834A] font-semibold flex items-center gap-1.5">
+              <span>✓ ยืนยันคิวและพร้อมรับคิวถัดไป</span>
+            </div>
+          </div>
+
+          <!-- ขั้นตอนที่ 4 -->
+          <div class="p-6 rounded-3xl bg-white border border-slate-200/90 shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span class="px-3 py-1 rounded-full bg-blue-50 text-blue-700 text-xs font-bold font-heading border border-blue-200">ขั้นตอนที่ 4</span>
+                <span class="text-slate-400 text-xs font-heading">บริหารเวลา</span>
+              </div>
+              <h3 class="font-heading font-bold text-lg text-[#171717] mb-3">การแจ้งเตือนโต๊ะ</h3>
+              <ul class="text-xs sm:text-sm text-slate-600 space-y-2.5 leading-relaxed">
+                <li class="flex items-start gap-2">
+                  <span class="text-blue-600 font-bold mt-0.5">•</span>
+                  <span>ระบบตรวจสอบระยะเวลาการใช้โต๊ะของลูกค้า</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-blue-600 font-bold mt-0.5">•</span>
+                  <span>แจ้งเตือนเจ้าหน้าที่เมื่อโต๊ะใกล้ครบกำหนดเวลา</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-blue-600 font-bold mt-0.5">•</span>
+                  <span>เจ้าหน้าที่สามารถเตรียมจัดโต๊ะสำหรับลูกค้าคิวถัดไปได้</span>
+                </li>
+              </ul>
+            </div>
+            <div class="mt-4 pt-3 border-t border-slate-100 text-[11px] text-blue-700 font-semibold flex items-center gap-1.5">
+              <span>✓ เพิ่มรอบหมุนเวียนโต๊ะได้อย่างแม่นยำ</span>
             </div>
           </div>
 
