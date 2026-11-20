@@ -188,7 +188,7 @@ const isTransparent = computed(() => isHome.value && !isScrolled.value && !open.
             ]"
           >
             <span>{{ t('nav.products') }}</span>
-            <svg class="h-4 w-4 transition-transform duration-200 group-hover:rotate-180" viewBox="0 0 20 20" fill="currentColor">
+            <svg class="h-3.5 w-3.5 transition-transform duration-200 group-hover:rotate-180 opacity-70" viewBox="0 0 20 20" fill="currentColor">
               <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
             </svg>
             <!-- Sleek Green Bottom Underline -->
@@ -214,13 +214,8 @@ const isTransparent = computed(() => isHome.value && !isScrolled.value && !open.
                       : 'text-[#171717] hover:bg-[#16834A] hover:text-white'
                   ]"
                 >
-                  <div class="leading-tight">
-                    <span class="block font-semibold">Enterprise Software</span>
-                    <span class="block text-[11px] opacity-75 group-hover/ent:text-white/90">
-                      {{ locale === 'th' ? 'ซอฟต์แวร์บริหารองค์กร' : 'Corporate Management' }}
-                    </span>
-                  </div>
-                  <svg class="w-4 h-4 transition-transform group-hover/ent:translate-x-0.5 shrink-0 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <span>{{ locale === 'th' ? 'ซอฟต์แวร์บริหารองค์กร' : 'Enterprise Software' }}</span>
+                  <svg class="w-4 h-4 transition-transform group-hover/ent:translate-x-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
                   </svg>
                 </NuxtLink>
@@ -230,68 +225,56 @@ const isTransparent = computed(() => isHome.value && !isScrolled.value && !open.
                   <div class="w-72 rounded-2xl border border-black/10 bg-white p-2 shadow-2xl backdrop-blur-2xl text-[#171717] space-y-0.5 font-heading">
                     <NuxtLink
                       to="/products/hr-ai"
-                      class="flex items-center justify-between rounded-xl px-3.5 py-2 text-sm font-medium transition-all"
+                      class="flex items-center justify-between rounded-xl px-4 py-2.5 text-sm font-medium transition-all"
                       :class="route.path.startsWith('/products/hr-ai') ? 'bg-[#16834A]/10 text-[#16834A] font-bold' : 'text-[#171717] hover:bg-[#F4F5F4] hover:text-[#16834A]'"
                     >
-                      <div>
-                        <span class="block font-bold text-sm">HR.ai</span>
-                        <span class="block text-[11px] text-slate-500 font-normal">ระบบบริหารทรัพยากรบุคคลอัจฉริยะ</span>
-                      </div>
+                      <span>HR.ai</span>
+                      <span class="text-xs text-slate-400 font-normal">บริหารงานบุคคล</span>
                     </NuxtLink>
 
                     <NuxtLink
                       to="/products/regist-ai"
-                      class="flex items-center justify-between rounded-xl px-3.5 py-2 text-sm font-medium transition-all"
+                      class="flex items-center justify-between rounded-xl px-4 py-2.5 text-sm font-medium transition-all"
                       :class="route.path.startsWith('/products/regist-ai') ? 'bg-[#16834A]/10 text-[#16834A] font-bold' : 'text-[#171717] hover:bg-[#F4F5F4] hover:text-[#16834A]'"
                     >
-                      <div>
-                        <span class="block font-bold text-sm">Regist.ai & i-Queue</span>
-                        <span class="block text-[11px] text-slate-500 font-normal">ระบบบริหารการลงทะเบียนและคิว</span>
-                      </div>
+                      <span>Regist.ai & i-Queue</span>
+                      <span class="text-xs text-slate-400 font-normal">ลงทะเบียน & คิว</span>
                     </NuxtLink>
 
                     <NuxtLink
                       to="/products/igenq"
-                      class="flex items-center justify-between rounded-xl px-3.5 py-2 text-sm font-medium transition-all"
+                      class="flex items-center justify-between rounded-xl px-4 py-2.5 text-sm font-medium transition-all"
                       :class="route.path === '/products/igenq' ? 'bg-[#16834A]/10 text-[#16834A] font-bold' : 'text-[#171717] hover:bg-[#F4F5F4] hover:text-[#16834A]'"
                     >
-                      <div>
-                        <span class="block font-bold text-sm">iGenQ</span>
-                        <span class="block text-[11px] text-slate-500 font-normal">โปรแกรมระบบจัดการคิวอัจฉริยะ</span>
-                      </div>
+                      <span>iGenQ</span>
+                      <span class="text-xs text-slate-400 font-normal">ระบบคิวอัจฉริยะ</span>
                     </NuxtLink>
 
                     <NuxtLink
                       to="/products/i-smartsoft"
-                      class="flex items-center justify-between rounded-xl px-3.5 py-2 text-sm font-medium transition-all"
+                      class="flex items-center justify-between rounded-xl px-4 py-2.5 text-sm font-medium transition-all"
                       :class="route.path === '/products/i-smartsoft' ? 'bg-[#16834A]/10 text-[#16834A] font-bold' : 'text-[#171717] hover:bg-[#F4F5F4] hover:text-[#16834A]'"
                     >
-                      <div>
-                        <span class="block font-bold text-sm">i-SmartSoft</span>
-                        <span class="block text-[11px] text-slate-500 font-normal">ระบบบริหารสำนักงาน e-Office</span>
-                      </div>
+                      <span>i-SmartSoft</span>
+                      <span class="text-xs text-slate-400 font-normal">e-Office</span>
                     </NuxtLink>
 
                     <NuxtLink
                       to="/products/i-finsoft"
-                      class="flex items-center justify-between rounded-xl px-3.5 py-2 text-sm font-medium transition-all"
+                      class="flex items-center justify-between rounded-xl px-4 py-2.5 text-sm font-medium transition-all"
                       :class="route.path === '/products/i-finsoft' ? 'bg-[#16834A]/10 text-[#16834A] font-bold' : 'text-[#171717] hover:bg-[#F4F5F4] hover:text-[#16834A]'"
                     >
-                      <div>
-                        <span class="block font-bold text-sm">i-FinSoft</span>
-                        <span class="block text-[11px] text-slate-500 font-normal">ระบบบริหารทรัพยากร ERP</span>
-                      </div>
+                      <span>i-FinSoft</span>
+                      <span class="text-xs text-slate-400 font-normal">ระบบ ERP</span>
                     </NuxtLink>
 
                     <NuxtLink
                       to="/products/i-smartflow"
-                      class="flex items-center justify-between rounded-xl px-3.5 py-2 text-sm font-medium transition-all"
+                      class="flex items-center justify-between rounded-xl px-4 py-2.5 text-sm font-medium transition-all"
                       :class="route.path === '/products/i-smartflow' ? 'bg-[#16834A]/10 text-[#16834A] font-bold' : 'text-[#171717] hover:bg-[#F4F5F4] hover:text-[#16834A]'"
                     >
-                      <div>
-                        <span class="block font-bold text-sm">i-SmartFlow</span>
-                        <span class="block text-[11px] text-slate-500 font-normal">ออกแบบกระบวนการทำงาน Workflow</span>
-                      </div>
+                      <span>i-SmartFlow</span>
+                      <span class="text-xs text-slate-400 font-normal">Workflow</span>
                     </NuxtLink>
                   </div>
                 </div>
@@ -308,13 +291,8 @@ const isTransparent = computed(() => isHome.value && !isScrolled.value && !open.
                       : 'text-[#171717] hover:bg-[#16834A] hover:text-white'
                   ]"
                 >
-                  <div class="leading-tight">
-                    <span class="block font-semibold">Service Development</span>
-                    <span class="block text-[11px] opacity-75 group-hover/srv:text-white/90">
-                      {{ locale === 'th' ? 'พัฒนาระบบและที่ปรึกษา' : 'Development & Consulting' }}
-                    </span>
-                  </div>
-                  <svg class="w-4 h-4 transition-transform group-hover/srv:translate-x-0.5 shrink-0 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <span>{{ locale === 'th' ? 'พัฒนาระบบและที่ปรึกษา' : 'Service Development' }}</span>
+                  <svg class="w-4 h-4 transition-transform group-hover/srv:translate-x-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
                   </svg>
                 </NuxtLink>
@@ -324,24 +302,20 @@ const isTransparent = computed(() => isHome.value && !isScrolled.value && !open.
                   <div class="w-72 rounded-2xl border border-black/10 bg-white p-2 shadow-2xl backdrop-blur-2xl text-[#171717] space-y-0.5 font-heading">
                     <NuxtLink
                       to="/products/custom-development"
-                      class="flex items-center justify-between rounded-xl px-3.5 py-2 text-sm font-medium transition-all"
+                      class="flex items-center justify-between rounded-xl px-4 py-2.5 text-sm font-medium transition-all"
                       :class="route.path === '/products/custom-development' ? 'bg-[#16834A]/10 text-[#16834A] font-bold' : 'text-[#171717] hover:bg-[#F4F5F4] hover:text-[#16834A]'"
                     >
-                      <div>
-                        <span class="block font-bold text-sm">Custom Development</span>
-                        <span class="block text-[11px] text-slate-500 font-normal">บริการพัฒนาระบบตามความต้องการ</span>
-                      </div>
+                      <span>Custom Development</span>
+                      <span class="text-xs text-slate-400 font-normal">พัฒนาระบบ</span>
                     </NuxtLink>
 
                     <NuxtLink
                       to="/products/it-consulting"
-                      class="flex items-center justify-between rounded-xl px-3.5 py-2 text-sm font-medium transition-all"
+                      class="flex items-center justify-between rounded-xl px-4 py-2.5 text-sm font-medium transition-all"
                       :class="route.path === '/products/it-consulting' ? 'bg-[#16834A]/10 text-[#16834A] font-bold' : 'text-[#171717] hover:bg-[#F4F5F4] hover:text-[#16834A]'"
                     >
-                      <div>
-                        <span class="block font-bold text-sm">IT Consulting</span>
-                        <span class="block text-[11px] text-slate-500 font-normal">ที่ปรึกษา Cloud & เชื่อมต่อ API</span>
-                      </div>
+                      <span>IT Consulting</span>
+                      <span class="text-xs text-slate-400 font-normal">Cloud & API</span>
                     </NuxtLink>
                   </div>
                 </div>
@@ -358,13 +332,8 @@ const isTransparent = computed(() => isHome.value && !isScrolled.value && !open.
                       : 'text-[#171717] hover:bg-[#16834A] hover:text-white'
                   ]"
                 >
-                  <div class="leading-tight">
-                    <span class="block font-semibold">E-Commerce</span>
-                    <span class="block text-[11px] opacity-75 group-hover/ecom:text-white/90">
-                      {{ locale === 'th' ? 'ระบบค้าขายออนไลน์ B2B/B2C' : 'E-Commerce Solutions' }}
-                    </span>
-                  </div>
-                  <svg class="w-4 h-4 transition-transform group-hover/ecom:translate-x-0.5 shrink-0 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <span>{{ locale === 'th' ? 'ระบบค้าขายออนไลน์ B2B/B2C' : 'E-Commerce Solutions' }}</span>
+                  <svg class="w-4 h-4 transition-transform group-hover/ecom:translate-x-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
                   </svg>
                 </NuxtLink>
@@ -374,35 +343,29 @@ const isTransparent = computed(() => isHome.value && !isScrolled.value && !open.
                   <div class="w-72 rounded-2xl border border-black/10 bg-white p-2 shadow-2xl backdrop-blur-2xl text-[#171717] space-y-0.5 font-heading">
                     <NuxtLink
                       to="/products/i-mall-b2b"
-                      class="flex items-center justify-between rounded-xl px-3.5 py-2 text-sm font-medium transition-all"
+                      class="flex items-center justify-between rounded-xl px-4 py-2.5 text-sm font-medium transition-all"
                       :class="route.path === '/products/i-mall-b2b' ? 'bg-[#16834A]/10 text-[#16834A] font-bold' : 'text-[#171717] hover:bg-[#F4F5F4] hover:text-[#16834A]'"
                     >
-                      <div>
-                        <span class="block font-bold text-sm">i-Mall B2B</span>
-                        <span class="block text-[11px] text-slate-500 font-normal">ระบบสั่งซื้อสินค้าสำหรับตัวแทนจำหน่าย</span>
-                      </div>
+                      <span>i-Mall B2B</span>
+                      <span class="text-xs text-slate-400 font-normal">ตัวแทนจำหน่าย</span>
                     </NuxtLink>
 
                     <NuxtLink
                       to="/products/i-shop"
-                      class="flex items-center justify-between rounded-xl px-3.5 py-2 text-sm font-medium transition-all"
+                      class="flex items-center justify-between rounded-xl px-4 py-2.5 text-sm font-medium transition-all"
                       :class="route.path === '/products/i-shop' ? 'bg-[#16834A]/10 text-[#16834A] font-bold' : 'text-[#171717] hover:bg-[#F4F5F4] hover:text-[#16834A]'"
                     >
-                      <div>
-                        <span class="block font-bold text-sm">i-Shop</span>
-                        <span class="block text-[11px] text-slate-500 font-normal">แพลตฟอร์มร้านค้าออนไลน์ & ตลาดกลาง</span>
-                      </div>
+                      <span>i-Shop</span>
+                      <span class="text-xs text-slate-400 font-normal">ร้านค้าออนไลน์</span>
                     </NuxtLink>
 
                     <NuxtLink
                       to="/products/i-payment-pos"
-                      class="flex items-center justify-between rounded-xl px-3.5 py-2 text-sm font-medium transition-all"
+                      class="flex items-center justify-between rounded-xl px-4 py-2.5 text-sm font-medium transition-all"
                       :class="route.path === '/products/i-payment-pos' ? 'bg-[#16834A]/10 text-[#16834A] font-bold' : 'text-[#171717] hover:bg-[#F4F5F4] hover:text-[#16834A]'"
                     >
-                      <div>
-                        <span class="block font-bold text-sm">i-Payment POS</span>
-                        <span class="block text-[11px] text-slate-500 font-normal">ระบบเชื่อมต่อการชำระเงินและจุดขาย</span>
-                      </div>
+                      <span>i-Payment POS</span>
+                      <span class="text-xs text-slate-400 font-normal">ชำระเงิน POS</span>
                     </NuxtLink>
                   </div>
                 </div>
@@ -477,7 +440,7 @@ const isTransparent = computed(() => isHome.value && !isScrolled.value && !open.
 
           <!-- About Dropdown Menu matching User Screenshot -->
           <div class="invisible absolute left-1/2 -translate-x-1/2 top-full pt-2 opacity-0 transition-all duration-200 group-focus-within:visible group-focus-within:opacity-100 group-hover:visible group-hover:opacity-100">
-            <div class="w-64 rounded-2xl border border-black/10 bg-white p-2 shadow-2xl backdrop-blur-2xl text-[#171717] space-y-0.5 font-heading">
+            <div class="w-72 rounded-2xl border border-black/10 bg-white p-2 shadow-2xl backdrop-blur-2xl text-[#171717] space-y-0.5 font-heading">
               
               <NuxtLink
                 to="/about/history"
@@ -531,14 +494,14 @@ const isTransparent = computed(() => isHome.value && !isScrolled.value && !open.
                   ]"
                 >
                   <span>การคุ้มครองข้อมูลส่วนบุคคล</span>
-                  <svg class="w-4 h-4 transition-transform group-hover/privacy:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg class="w-4 h-4 transition-transform group-hover/privacy:translate-x-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
                   </svg>
                 </NuxtLink>
 
                 <!-- Flyout Nested Sub-menu to the right (ตรงตามรูปภาพ: นโยบายความเป็นส่วนตัว / นโยบายการใช้คุกกี้) -->
-                <div class="invisible opacity-0 group-hover/privacy:visible group-hover/privacy:opacity-100 group-focus-within/privacy:visible group-focus-within/privacy:opacity-100 transition-all duration-150 absolute left-full top-0 pl-1 z-50">
-                  <div class="w-56 rounded-2xl border border-black/10 bg-white p-2 shadow-2xl backdrop-blur-2xl text-[#171717] space-y-0.5 font-heading">
+                <div class="invisible opacity-0 group-hover/privacy:visible group-hover/privacy:opacity-100 group-focus-within/privacy:visible group-focus-within/privacy:opacity-100 transition-all duration-150 absolute left-full top-0 pl-1.5 z-50">
+                  <div class="w-72 rounded-2xl border border-black/10 bg-white p-2 shadow-2xl backdrop-blur-2xl text-[#171717] space-y-0.5 font-heading">
                     <NuxtLink
                       to="/about/privacy"
                       class="flex items-center justify-between rounded-xl px-4 py-2.5 text-sm font-medium transition-all"
@@ -564,8 +527,8 @@ const isTransparent = computed(() => isHome.value && !isScrolled.value && !open.
         <!-- Contact Dropdown (ติดต่อเรา) with 2 Separate Sub-pages -->
         <div class="group relative py-2">
           <NuxtLink
-            to="/contact/sales"
-            class="relative flex items-center gap-1 px-3.5 py-2 transition-all font-heading"
+            to="/contact"
+            class="relative flex items-center gap-1.5 px-3.5 py-2 transition-all font-heading"
             :class="[
               isContactActive
                 ? (isTransparent
@@ -589,8 +552,8 @@ const isTransparent = computed(() => isHome.value && !isScrolled.value && !open.
           </NuxtLink>
 
           <!-- Contact Dropdown Menu matching About Dropdown Style -->
-          <div class="invisible absolute right-0 top-full pt-2 opacity-0 transition-all duration-200 group-focus-within:visible group-focus-within:opacity-100 group-hover:visible group-hover:opacity-100">
-            <div class="w-64 sm:w-72 rounded-2xl border border-black/10 bg-white p-2 shadow-2xl backdrop-blur-2xl text-[#171717] space-y-0.5 font-heading">
+          <div class="invisible absolute left-1/2 -translate-x-1/2 top-full pt-2 opacity-0 transition-all duration-200 group-focus-within:visible group-focus-within:opacity-100 group-hover:visible group-hover:opacity-100">
+            <div class="w-72 rounded-2xl border border-black/10 bg-white p-2 shadow-2xl backdrop-blur-2xl text-[#171717] space-y-0.5 font-heading">
               
               <!-- Sub-page 1: Contact Company / Office & Map -->
               <NuxtLink
@@ -743,7 +706,7 @@ const isTransparent = computed(() => isHome.value && !isScrolled.value && !open.
           class="flex items-center justify-between rounded-lg px-3 py-2 text-sm font-medium transition-all"
           :class="route.query.category === 'enterprise' ? 'bg-white text-[#16834A] font-bold shadow-sm' : 'text-[#171717] hover:bg-white'"
         >
-          <span>🏢 Enterprise Software (6 ระบบ)</span>
+          <span>Enterprise Software (6 ระบบ)</span>
           <span v-if="route.query.category === 'enterprise'" class="w-2 h-2 rounded-full bg-[#16834A]"></span>
         </NuxtLink>
         <NuxtLink
@@ -751,7 +714,7 @@ const isTransparent = computed(() => isHome.value && !isScrolled.value && !open.
           class="flex items-center justify-between rounded-lg px-3 py-2 text-sm font-medium transition-all"
           :class="route.query.category === 'service' ? 'bg-white text-[#16834A] font-bold shadow-sm' : 'text-[#171717] hover:bg-white'"
         >
-          <span>🛠️ Service Development (2 บริการ)</span>
+          <span>Service Development (2 บริการ)</span>
           <span v-if="route.query.category === 'service'" class="w-2 h-2 rounded-full bg-[#16834A]"></span>
         </NuxtLink>
         <NuxtLink
@@ -759,7 +722,7 @@ const isTransparent = computed(() => isHome.value && !isScrolled.value && !open.
           class="flex items-center justify-between rounded-lg px-3 py-2 text-sm font-medium transition-all"
           :class="route.query.category === 'ecommerce' ? 'bg-white text-[#16834A] font-bold shadow-sm' : 'text-[#171717] hover:bg-white'"
         >
-          <span>🛒 E-Commerce (3 ระบบ)</span>
+          <span>E-Commerce (3 ระบบ)</span>
           <span v-if="route.query.category === 'ecommerce'" class="w-2 h-2 rounded-full bg-[#16834A]"></span>
         </NuxtLink>
       </div>
@@ -860,7 +823,7 @@ const isTransparent = computed(() => isHome.value && !isScrolled.value && !open.
           class="flex items-center justify-between rounded-lg px-3 py-2.5 text-sm font-medium transition-all"
           :class="route.path === '/contact/company' ? 'bg-white text-[#16834A] font-bold shadow-sm' : 'text-[#171717] hover:bg-white'"
         >
-          <span>🏢 ติดต่อบริษัท (สถานที่ & แผนที่)</span>
+          <span>ติดต่อบริษัท (สถานที่ & แผนที่)</span>
           <span v-if="route.path === '/contact/company'" class="w-2 h-2 rounded-full bg-[#16834A]"></span>
         </NuxtLink>
         <NuxtLink
@@ -868,7 +831,7 @@ const isTransparent = computed(() => isHome.value && !isScrolled.value && !open.
           class="flex items-center justify-between rounded-lg px-3 py-2.5 text-sm font-medium transition-all"
           :class="route.path === '/contact/sales' || route.path === '/contact' ? 'bg-white text-[#16834A] font-bold shadow-sm' : 'text-[#171717] hover:bg-white'"
         >
-          <span>💼 ติดต่อฝ่ายขาย / นัดสาธิตระบบ</span>
+          <span>ติดต่อฝ่ายขาย / นัดสาธิตระบบ</span>
           <span v-if="route.path === '/contact/sales' || route.path === '/contact'" class="w-2 h-2 rounded-full bg-[#16834A]"></span>
         </NuxtLink>
       </div>
