@@ -221,7 +221,7 @@ useSeoMeta({
                   rel="noopener noreferrer"
                   class="inline-flex items-center justify-center gap-2 w-full py-2.5 px-4 rounded-xl bg-slate-900 text-white text-xs font-heading font-semibold hover:bg-slate-800 transition-colors shadow-sm"
                 >
-                  <span>เยี่ยมชมเว็บไซต์ i-regist.com</span>
+                  <span>เยี่ยมชมเว็บไซต์ {{ product.externalUrl.replace('https://www.', '').replace('https://', '').replace('http://www.', '').replace('http://', '').replace(/\/$/, '') }}</span>
                   <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                   </svg>
@@ -268,11 +268,11 @@ useSeoMeta({
             แผนผังกระบวนการทำงานและภาพรวมระบบ
           </h2>
           <p class="mt-2 text-sm sm:text-base text-slate-500">
-            คลิกที่ภาพเพื่อดูรายละเอียดขนาดใหญ่ แสดงขั้นตอนการลงทะเบียนและการบริหารจัดการคิวหน้างาน
+            {{ product.gallerySubtitle || 'คลิกที่ภาพเพื่อดูรายละเอียดขนาดใหญ่ แสดงขั้นตอนกระบวนการทำงานและภาพรวมของระบบ' }}
           </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+        <div :class="product.gallery.length === 1 ? 'max-w-4xl' : 'grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8'">
           <NuxtLink
             v-for="(item, idx) in product.gallery"
             :key="idx"
