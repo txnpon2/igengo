@@ -199,48 +199,228 @@ const isTransparent = computed(() => isHome.value && !isScrolled.value && !open.
             ></span>
           </NuxtLink>
 
-          <!-- Mega Menu Panel -->
-          <div class="invisible absolute right-0 top-full pt-2 opacity-0 transition-all duration-200 group-focus-within:visible group-focus-within:opacity-100 group-hover:visible group-hover:opacity-100">
-            <div class="w-[580px] rounded-2xl border border-black/10 bg-white p-5 shadow-2xl backdrop-blur-2xl text-[#171717]">
-              <div class="flex items-center justify-between pb-3 mb-3 border-b border-slate-100">
-                <span class="text-xs font-bold uppercase tracking-wider text-[#16834A]">
-                  {{ locale === 'th' ? 'โซลูชันซอฟต์แวร์มาตรฐาน ISO/IEC 29110' : 'ISO/IEC 29110 Certified Software Solutions' }}
-                </span>
-                <NuxtLink to="/products" class="text-xs font-semibold text-[#16834A] hover:underline">
-                  {{ t('nav.allProducts') }} →
-                </NuxtLink>
-              </div>
-
-              <!-- 2-Column Categories -->
-              <div class="grid grid-cols-2 gap-3">
+          <!-- Products Dropdown Menu matching About Dropdown Style -->
+          <div class="invisible absolute left-1/2 -translate-x-1/2 top-full pt-2 opacity-0 transition-all duration-200 group-focus-within:visible group-focus-within:opacity-100 group-hover:visible group-hover:opacity-100">
+            <div class="w-72 rounded-2xl border border-black/10 bg-white p-2 shadow-2xl backdrop-blur-2xl text-[#171717] space-y-0.5 font-heading">
+              
+              <!-- 1. Enterprise Software with Flyout Sub-menu -->
+              <div class="relative group/ent">
                 <NuxtLink
-                  v-for="(c, key) in categories"
-                  :key="key"
-                  :to="{ path: '/products', query: { category: key } }"
-                  class="rounded-xl p-3 hover:bg-[#F4F5F4] transition-all group/item border border-transparent hover:border-[#16834A]/20"
+                  :to="{ path: '/products', query: { category: 'enterprise' } }"
+                  class="flex items-center justify-between rounded-xl px-4 py-2.5 text-sm font-medium transition-all group-hover/ent:bg-[#16834A] group-hover/ent:text-white"
+                  :class="[
+                    (route.path.startsWith('/products') && (route.query.category === 'enterprise' || ['hr-ai', 'regist-ai', 'igenq', 'i-smartsoft', 'i-finsoft', 'i-smartflow', 'regist-ai-registration', 'regist-ai-iqueue', 'hr-ai-features'].includes(route.params.slug as string || route.path.split('/').pop() as string)))
+                      ? 'bg-[#16834A] text-white font-bold'
+                      : 'text-[#171717] hover:bg-[#16834A] hover:text-white'
+                  ]"
                 >
-                  <span class="block text-sm font-bold text-[#171717] group-hover/item:text-[#16834A] transition-colors">
-                    {{ c.label }}
-                  </span>
-                  <span class="block text-xs text-slate-500 mt-1 leading-snug">
-                    {{ c.description }}
-                  </span>
+                  <div class="leading-tight">
+                    <span class="block font-semibold">Enterprise Software</span>
+                    <span class="block text-[11px] opacity-75 group-hover/ent:text-white/90">
+                      {{ locale === 'th' ? 'ซอฟต์แวร์บริหารองค์กร' : 'Corporate Management' }}
+                    </span>
+                  </div>
+                  <svg class="w-4 h-4 transition-transform group-hover/ent:translate-x-0.5 shrink-0 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                  </svg>
                 </NuxtLink>
+
+                <!-- Flyout Nested Sub-menu to the right -->
+                <div class="invisible opacity-0 group-hover/ent:visible group-hover/ent:opacity-100 group-focus-within/ent:visible group-focus-within/ent:opacity-100 transition-all duration-150 absolute left-full top-0 pl-1.5 z-50">
+                  <div class="w-72 rounded-2xl border border-black/10 bg-white p-2 shadow-2xl backdrop-blur-2xl text-[#171717] space-y-0.5 font-heading">
+                    <NuxtLink
+                      to="/products/hr-ai"
+                      class="flex items-center justify-between rounded-xl px-3.5 py-2 text-sm font-medium transition-all"
+                      :class="route.path.startsWith('/products/hr-ai') ? 'bg-[#16834A]/10 text-[#16834A] font-bold' : 'text-[#171717] hover:bg-[#F4F5F4] hover:text-[#16834A]'"
+                    >
+                      <div>
+                        <span class="block font-bold text-sm">HR.ai</span>
+                        <span class="block text-[11px] text-slate-500 font-normal">ระบบบริหารทรัพยากรบุคคลอัจฉริยะ</span>
+                      </div>
+                    </NuxtLink>
+
+                    <NuxtLink
+                      to="/products/regist-ai"
+                      class="flex items-center justify-between rounded-xl px-3.5 py-2 text-sm font-medium transition-all"
+                      :class="route.path.startsWith('/products/regist-ai') ? 'bg-[#16834A]/10 text-[#16834A] font-bold' : 'text-[#171717] hover:bg-[#F4F5F4] hover:text-[#16834A]'"
+                    >
+                      <div>
+                        <span class="block font-bold text-sm">Regist.ai & i-Queue</span>
+                        <span class="block text-[11px] text-slate-500 font-normal">ระบบบริหารการลงทะเบียนและคิว</span>
+                      </div>
+                    </NuxtLink>
+
+                    <NuxtLink
+                      to="/products/igenq"
+                      class="flex items-center justify-between rounded-xl px-3.5 py-2 text-sm font-medium transition-all"
+                      :class="route.path === '/products/igenq' ? 'bg-[#16834A]/10 text-[#16834A] font-bold' : 'text-[#171717] hover:bg-[#F4F5F4] hover:text-[#16834A]'"
+                    >
+                      <div>
+                        <span class="block font-bold text-sm">iGenQ</span>
+                        <span class="block text-[11px] text-slate-500 font-normal">โปรแกรมระบบจัดการคิวอัจฉริยะ</span>
+                      </div>
+                    </NuxtLink>
+
+                    <NuxtLink
+                      to="/products/i-smartsoft"
+                      class="flex items-center justify-between rounded-xl px-3.5 py-2 text-sm font-medium transition-all"
+                      :class="route.path === '/products/i-smartsoft' ? 'bg-[#16834A]/10 text-[#16834A] font-bold' : 'text-[#171717] hover:bg-[#F4F5F4] hover:text-[#16834A]'"
+                    >
+                      <div>
+                        <span class="block font-bold text-sm">i-SmartSoft</span>
+                        <span class="block text-[11px] text-slate-500 font-normal">ระบบบริหารสำนักงาน e-Office</span>
+                      </div>
+                    </NuxtLink>
+
+                    <NuxtLink
+                      to="/products/i-finsoft"
+                      class="flex items-center justify-between rounded-xl px-3.5 py-2 text-sm font-medium transition-all"
+                      :class="route.path === '/products/i-finsoft' ? 'bg-[#16834A]/10 text-[#16834A] font-bold' : 'text-[#171717] hover:bg-[#F4F5F4] hover:text-[#16834A]'"
+                    >
+                      <div>
+                        <span class="block font-bold text-sm">i-FinSoft</span>
+                        <span class="block text-[11px] text-slate-500 font-normal">ระบบบริหารทรัพยากร ERP</span>
+                      </div>
+                    </NuxtLink>
+
+                    <NuxtLink
+                      to="/products/i-smartflow"
+                      class="flex items-center justify-between rounded-xl px-3.5 py-2 text-sm font-medium transition-all"
+                      :class="route.path === '/products/i-smartflow' ? 'bg-[#16834A]/10 text-[#16834A] font-bold' : 'text-[#171717] hover:bg-[#F4F5F4] hover:text-[#16834A]'"
+                    >
+                      <div>
+                        <span class="block font-bold text-sm">i-SmartFlow</span>
+                        <span class="block text-[11px] text-slate-500 font-normal">ออกแบบกระบวนการทำงาน Workflow</span>
+                      </div>
+                    </NuxtLink>
+                  </div>
+                </div>
               </div>
 
-              <!-- Quick Systems Direct Links -->
-              <div class="mt-4 pt-3 border-t border-slate-100 flex flex-wrap gap-2 text-xs">
-                <span class="text-slate-400 font-normal">{{ t('nav.popularSystems') }}</span>
-                <NuxtLink to="/products/hr-ai" class="font-semibold text-[#171717] hover:text-[#16834A]">HR.ai</NuxtLink>
-                <span class="text-slate-300">·</span>
-                <NuxtLink to="/products/igenq" class="font-semibold text-[#171717] hover:text-[#16834A]">iGenQ</NuxtLink>
-                <span class="text-slate-300">·</span>
-                <NuxtLink to="/products/i-smartsoft" class="font-semibold text-[#171717] hover:text-[#16834A]">i-SmartSoft</NuxtLink>
-                <span class="text-slate-300">·</span>
-                <NuxtLink to="/products/i-finsoft" class="font-semibold text-[#171717] hover:text-[#16834A]">i-FinSoft</NuxtLink>
-                <span class="text-slate-300">·</span>
-                <NuxtLink to="/products/regist-ai" class="font-semibold text-[#171717] hover:text-[#16834A]">Regist.ai</NuxtLink>
+              <!-- 2. Service Development with Flyout Sub-menu -->
+              <div class="relative group/srv">
+                <NuxtLink
+                  :to="{ path: '/products', query: { category: 'service' } }"
+                  class="flex items-center justify-between rounded-xl px-4 py-2.5 text-sm font-medium transition-all group-hover/srv:bg-[#16834A] group-hover/srv:text-white"
+                  :class="[
+                    (route.path.startsWith('/products') && (route.query.category === 'service' || ['custom-development', 'it-consulting'].includes(route.params.slug as string)))
+                      ? 'bg-[#16834A] text-white font-bold'
+                      : 'text-[#171717] hover:bg-[#16834A] hover:text-white'
+                  ]"
+                >
+                  <div class="leading-tight">
+                    <span class="block font-semibold">Service Development</span>
+                    <span class="block text-[11px] opacity-75 group-hover/srv:text-white/90">
+                      {{ locale === 'th' ? 'พัฒนาระบบและที่ปรึกษา' : 'Development & Consulting' }}
+                    </span>
+                  </div>
+                  <svg class="w-4 h-4 transition-transform group-hover/srv:translate-x-0.5 shrink-0 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                  </svg>
+                </NuxtLink>
+
+                <!-- Flyout Nested Sub-menu to the right -->
+                <div class="invisible opacity-0 group-hover/srv:visible group-hover/srv:opacity-100 group-focus-within/srv:visible group-focus-within/srv:opacity-100 transition-all duration-150 absolute left-full top-0 pl-1.5 z-50">
+                  <div class="w-72 rounded-2xl border border-black/10 bg-white p-2 shadow-2xl backdrop-blur-2xl text-[#171717] space-y-0.5 font-heading">
+                    <NuxtLink
+                      to="/products/custom-development"
+                      class="flex items-center justify-between rounded-xl px-3.5 py-2 text-sm font-medium transition-all"
+                      :class="route.path === '/products/custom-development' ? 'bg-[#16834A]/10 text-[#16834A] font-bold' : 'text-[#171717] hover:bg-[#F4F5F4] hover:text-[#16834A]'"
+                    >
+                      <div>
+                        <span class="block font-bold text-sm">Custom Development</span>
+                        <span class="block text-[11px] text-slate-500 font-normal">บริการพัฒนาระบบตามความต้องการ</span>
+                      </div>
+                    </NuxtLink>
+
+                    <NuxtLink
+                      to="/products/it-consulting"
+                      class="flex items-center justify-between rounded-xl px-3.5 py-2 text-sm font-medium transition-all"
+                      :class="route.path === '/products/it-consulting' ? 'bg-[#16834A]/10 text-[#16834A] font-bold' : 'text-[#171717] hover:bg-[#F4F5F4] hover:text-[#16834A]'"
+                    >
+                      <div>
+                        <span class="block font-bold text-sm">IT Consulting</span>
+                        <span class="block text-[11px] text-slate-500 font-normal">ที่ปรึกษา Cloud & เชื่อมต่อ API</span>
+                      </div>
+                    </NuxtLink>
+                  </div>
+                </div>
               </div>
+
+              <!-- 3. E-Commerce with Flyout Sub-menu -->
+              <div class="relative group/ecom">
+                <NuxtLink
+                  :to="{ path: '/products', query: { category: 'ecommerce' } }"
+                  class="flex items-center justify-between rounded-xl px-4 py-2.5 text-sm font-medium transition-all group-hover/ecom:bg-[#16834A] group-hover/ecom:text-white"
+                  :class="[
+                    (route.path.startsWith('/products') && (route.query.category === 'ecommerce' || ['i-mall-b2b', 'i-shop', 'i-payment-pos'].includes(route.params.slug as string)))
+                      ? 'bg-[#16834A] text-white font-bold'
+                      : 'text-[#171717] hover:bg-[#16834A] hover:text-white'
+                  ]"
+                >
+                  <div class="leading-tight">
+                    <span class="block font-semibold">E-Commerce</span>
+                    <span class="block text-[11px] opacity-75 group-hover/ecom:text-white/90">
+                      {{ locale === 'th' ? 'ระบบค้าขายออนไลน์ B2B/B2C' : 'E-Commerce Solutions' }}
+                    </span>
+                  </div>
+                  <svg class="w-4 h-4 transition-transform group-hover/ecom:translate-x-0.5 shrink-0 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                  </svg>
+                </NuxtLink>
+
+                <!-- Flyout Nested Sub-menu to the right -->
+                <div class="invisible opacity-0 group-hover/ecom:visible group-hover/ecom:opacity-100 group-focus-within/ecom:visible group-focus-within/ecom:opacity-100 transition-all duration-150 absolute left-full top-0 pl-1.5 z-50">
+                  <div class="w-72 rounded-2xl border border-black/10 bg-white p-2 shadow-2xl backdrop-blur-2xl text-[#171717] space-y-0.5 font-heading">
+                    <NuxtLink
+                      to="/products/i-mall-b2b"
+                      class="flex items-center justify-between rounded-xl px-3.5 py-2 text-sm font-medium transition-all"
+                      :class="route.path === '/products/i-mall-b2b' ? 'bg-[#16834A]/10 text-[#16834A] font-bold' : 'text-[#171717] hover:bg-[#F4F5F4] hover:text-[#16834A]'"
+                    >
+                      <div>
+                        <span class="block font-bold text-sm">i-Mall B2B</span>
+                        <span class="block text-[11px] text-slate-500 font-normal">ระบบสั่งซื้อสินค้าสำหรับตัวแทนจำหน่าย</span>
+                      </div>
+                    </NuxtLink>
+
+                    <NuxtLink
+                      to="/products/i-shop"
+                      class="flex items-center justify-between rounded-xl px-3.5 py-2 text-sm font-medium transition-all"
+                      :class="route.path === '/products/i-shop' ? 'bg-[#16834A]/10 text-[#16834A] font-bold' : 'text-[#171717] hover:bg-[#F4F5F4] hover:text-[#16834A]'"
+                    >
+                      <div>
+                        <span class="block font-bold text-sm">i-Shop</span>
+                        <span class="block text-[11px] text-slate-500 font-normal">แพลตฟอร์มร้านค้าออนไลน์ & ตลาดกลาง</span>
+                      </div>
+                    </NuxtLink>
+
+                    <NuxtLink
+                      to="/products/i-payment-pos"
+                      class="flex items-center justify-between rounded-xl px-3.5 py-2 text-sm font-medium transition-all"
+                      :class="route.path === '/products/i-payment-pos' ? 'bg-[#16834A]/10 text-[#16834A] font-bold' : 'text-[#171717] hover:bg-[#F4F5F4] hover:text-[#16834A]'"
+                    >
+                      <div>
+                        <span class="block font-bold text-sm">i-Payment POS</span>
+                        <span class="block text-[11px] text-slate-500 font-normal">ระบบเชื่อมต่อการชำระเงินและจุดขาย</span>
+                      </div>
+                    </NuxtLink>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Divider -->
+              <div class="my-1 border-t border-slate-100"></div>
+
+              <!-- All Products Direct Link -->
+              <NuxtLink
+                to="/products"
+                class="flex items-center justify-between rounded-xl px-4 py-2.5 text-sm font-bold text-[#16834A] hover:bg-[#16834A]/10 transition-all group/all"
+                :class="route.path === '/products' && !route.query.category ? 'bg-[#16834A]/10 font-bold' : ''"
+              >
+                <span>{{ locale === 'th' ? 'ดูผลิตภัณฑ์ทั้งหมด (11 ระบบ)' : 'View All Products (11 Systems)' }}</span>
+                <span class="transition-transform group-hover/all:translate-x-1">→</span>
+              </NuxtLink>
+
             </div>
           </div>
         </div>
@@ -570,18 +750,41 @@ const isTransparent = computed(() => isHome.value && !isScrolled.value && !open.
         <span v-if="isHomeActive" class="w-2 h-2 rounded-full bg-[#16834A]"></span>
       </NuxtLink>
 
-      <NuxtLink
-        to="/products"
-        class="flex items-center justify-between rounded-xl px-4 py-3 text-base font-medium transition-all"
-        :class="[
-          isProductsActive
-            ? 'bg-[#16834A]/10 text-[#16834A] font-bold border-l-4 border-[#16834A]'
-            : 'text-[#171717] hover:bg-[#F4F5F4]'
-        ]"
-      >
-        <span>{{ t('nav.products') }}</span>
-        <span v-if="isProductsActive" class="w-2 h-2 rounded-full bg-[#16834A]"></span>
-      </NuxtLink>
+      <!-- Mobile Products Section -->
+      <div class="rounded-xl border border-slate-200/80 bg-slate-50/70 p-2.5 space-y-1">
+        <div class="flex items-center justify-between px-3 py-1">
+          <span class="text-xs font-bold uppercase tracking-wider text-[#16834A]">
+            {{ t('nav.products') }}
+          </span>
+          <NuxtLink to="/products" class="text-xs font-semibold text-[#16834A] hover:underline">
+            {{ locale === 'th' ? 'ดูทั้งหมด (11) →' : 'All (11) →' }}
+          </NuxtLink>
+        </div>
+        <NuxtLink
+          :to="{ path: '/products', query: { category: 'enterprise' } }"
+          class="flex items-center justify-between rounded-lg px-3 py-2 text-sm font-medium transition-all"
+          :class="route.query.category === 'enterprise' ? 'bg-white text-[#16834A] font-bold shadow-sm' : 'text-[#171717] hover:bg-white'"
+        >
+          <span>🏢 Enterprise Software (6 ระบบ)</span>
+          <span v-if="route.query.category === 'enterprise'" class="w-2 h-2 rounded-full bg-[#16834A]"></span>
+        </NuxtLink>
+        <NuxtLink
+          :to="{ path: '/products', query: { category: 'service' } }"
+          class="flex items-center justify-between rounded-lg px-3 py-2 text-sm font-medium transition-all"
+          :class="route.query.category === 'service' ? 'bg-white text-[#16834A] font-bold shadow-sm' : 'text-[#171717] hover:bg-white'"
+        >
+          <span>🛠️ Service Development (2 บริการ)</span>
+          <span v-if="route.query.category === 'service'" class="w-2 h-2 rounded-full bg-[#16834A]"></span>
+        </NuxtLink>
+        <NuxtLink
+          :to="{ path: '/products', query: { category: 'ecommerce' } }"
+          class="flex items-center justify-between rounded-lg px-3 py-2 text-sm font-medium transition-all"
+          :class="route.query.category === 'ecommerce' ? 'bg-white text-[#16834A] font-bold shadow-sm' : 'text-[#171717] hover:bg-white'"
+        >
+          <span>🛒 E-Commerce (3 ระบบ)</span>
+          <span v-if="route.query.category === 'ecommerce'" class="w-2 h-2 rounded-full bg-[#16834A]"></span>
+        </NuxtLink>
+      </div>
 
       <NuxtLink
         v-for="l in links"
