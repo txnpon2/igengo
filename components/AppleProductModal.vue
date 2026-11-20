@@ -326,6 +326,16 @@ onUnmounted(() => {
               {{ activeProduct.code }}
             </span>
             <span class="text-sm font-semibold">{{ lightboxTitle || activeProduct.title }}</span>
+            <div v-if="activeProduct.slug === 'regist-ai'" class="mt-3">
+              <NuxtLink
+                to="/products/regist-ai-registration"
+                class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#16834A] hover:bg-[#106B3B] text-white text-xs font-semibold shadow-md transition-all"
+                @click="closeLightbox(); closeProduct();"
+              >
+                <span>ดูภาพพร้อมคำอธิบายรายละเอียดทั้งหมด</span>
+                <span>→</span>
+              </NuxtLink>
+            </div>
           </div>
 
           <button

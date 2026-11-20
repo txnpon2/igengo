@@ -70,6 +70,7 @@ export const products: Product[] = [
         title: 'ขั้นตอนการลงทะเบียนออนไลน์ (3 ขั้นตอน / 6 ขั้นตอน)',
         image: '/images/products/regist-ai/regist-steps.jpg',
         caption: 'กระบวนการลงทะเบียนออนไลน์ง่ายๆ: กรณีไม่มีค่าลงทะเบียน (3 ขั้นตอน) และกรณีมีค่าลงทะเบียน (6 ขั้นตอน)',
+        link: '/products/regist-ai-registration',
       },
       {
         title: 'ระบบการจัดการคิว i-Queue by Regist.ai',

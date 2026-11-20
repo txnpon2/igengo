@@ -16,7 +16,7 @@ export interface Product {
   icon?: string
   adminFeatures?: string[]
   userFeatures?: string[]
-  gallery?: { title: string; image: string; caption?: string }[]
+  gallery?: { title: string; image: string; caption?: string; link?: string }[]
   externalUrl?: string
   contact?: { name: string; phone: string; email: string }
   brochures?: { title: string; url: string }[]

@@ -307,8 +307,17 @@ useSeoMeta({
                 </p>
               </div>
               <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-semibold text-[#16834A]">
-                <span>ดูภาพความละเอียดเต็ม</span>
-                <span class="transform group-hover:translate-x-1 transition-transform">→</span>
+                <NuxtLink
+                  v-if="item.link"
+                  :to="item.link"
+                  class="inline-flex items-center gap-1.5 font-bold hover:underline"
+                  @click.stop
+                >
+                  <span>ดูภาพและรายละเอียดฉบับเต็ม</span>
+                  <span>→</span>
+                </NuxtLink>
+                <span v-else>ดูภาพความละเอียดเต็ม</span>
+                <span v-if="!item.link" class="transform group-hover:translate-x-1 transition-transform">→</span>
               </div>
             </div>
           </div>
