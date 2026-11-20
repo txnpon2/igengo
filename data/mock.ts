@@ -186,13 +186,19 @@ export const products: Product[] = [
       'เปิดดูสลิปเงินเดือนอิเล็กทรอนิกส์ (e-Payslip) และขอหนังสือรับรองเงินเดือน/การทำงาน',
       'ดูแผนการฝึกอบรมส่วนบุคคล (IDP) ประเมินผลงานตนเอง และรับข้อเสนอแนะจากหัวหน้างาน',
     ],
-    gallerySubtitle: 'แผนผังภาพรวมระบบ HR.ai และรางวัลเกียรติยศระดับประเทศ ตอบโจทย์ทุกงานบริหารคน ครอบคลุม 3 เสาหลัก: HRM, HRD และ OD',
+    gallerySubtitle: 'แผนผังภาพรวมระบบ HR.ai สถาปัตยกรรม 4 ส่วนหลัก และรางวัลเกียรติยศระดับประเทศ ตอบโจทย์ทุกงานบริหารคน',
     gallery: [
       {
         title: 'HR.ai แพลตฟอร์มบริหารทรัพยากรมนุษย์อัจฉริยะ (HRM • HRD • OD)',
         image: '/images/products/hr-ai/hraicloud-overview.jpg',
         caption: 'HR.ai เป็นระบบบริหารจัดการทรัพยากรบุคคลที่ช่วยให้องค์กรจัดการข้อมูลพนักงาน พัฒนาบุคลากร และวางแผนพัฒนาองค์กรได้อย่างเป็นระบบ โดยแบ่งการทำงานออกเป็น 3 ส่วนหลัก ได้แก่ HRM, HRD และ OD',
         link: '/products/hr-ai-overview',
+      },
+      {
+        title: 'HR.ai ระบบบริหารทรัพยากรมนุษย์อัจฉริยะ (EIS • HRM • HRD • OD)',
+        image: '/images/products/hr-ai/hr-ai-brochure-poster.jpg',
+        caption: 'นำเทคโนโลยี AI และการสั่งงานด้วยเสียง (Voice Command) เข้ามาช่วยจัดการงานด้านบุคลากรและการบริหารองค์กร ครอบคลุม 4 ส่วนหลัก: EIS, HRM, HRD, OD',
+        link: '/products/hr-ai-features',
       },
       {
         title: 'รางวัล The Winner — OIIO Thailand Techland 2019',
