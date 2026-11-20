@@ -121,6 +121,58 @@ const coreAdvantages = [
   },
 ]
 
+// 6 ศูนย์ข้อมูลและบริการ iGenQ
+const menuItems = [
+  {
+    id: 'about',
+    title: 'รู้จัก iGenQ',
+    sub: 'ภาพรวมระบบคิวอัจฉริยะ',
+    image: '/images/products/igenq/menu-about.jpg',
+    to: '/contact/sales',
+    external: false,
+  },
+  {
+    id: 'portfolio',
+    title: 'ผลงานของเรา',
+    sub: 'หน่วยงานและองค์กรที่ไว้วางใจ',
+    image: '/images/products/igenq/menu-portfolio.jpg',
+    to: '/contact/sales',
+    external: false,
+  },
+  {
+    id: 'pricing',
+    title: 'Plans & Pricing',
+    sub: 'แพ็กเกจราคาและการบริการ',
+    image: '/images/products/igenq/menu-pricing.jpg',
+    to: '/contact/sales',
+    external: false,
+  },
+  {
+    id: 'contact',
+    title: 'ติดต่อทีมงาน',
+    sub: 'ปรึกษาและนัดสาธิตระบบ',
+    image: '/images/products/igenq/menu-contact.jpg',
+    to: '/contact/sales',
+    external: false,
+  },
+  {
+    id: 'manual',
+    title: 'คู่มือการใช้งาน',
+    sub: 'เอกสารแนะนำและคู่มือ PDF',
+    image: '/images/products/igenq/menu-manual.jpg',
+    to: '/images/products/igenq/Proposal_iGenQ.pdf',
+    external: true,
+  },
+  {
+    id: 'products',
+    title: 'ผลิตภัณฑ์อื่นๆ ของเรา',
+    sub: 'โซลูชันซอฟต์แวร์ IGENCO',
+    image: '/images/products/igenq/menu-products.jpg',
+    to: '/products',
+    external: false,
+  },
+]
+
 useSeoMeta({
   title: 'iGenQ (ไอเจนคิว) ระบบจัดการคิวอัจฉริยะแบบ New Normal | IGENCO',
   description: 'iGenQ ระบบบริหารคิวอัจฉริยะบน Cloud ทำงานง่ายผ่านสมาร์ทโฟน ไม่ต้องติดตั้งแอป สแกน QR Code รับ e-Ticket แจ้งเตือนผ่าน LINE Notify และแสดงผลบน Smart TV ไร้สาย พัฒนาโดย บริษัท ไอเจนโก้ จำกัด มาตรฐาน ISO/IEC 29110',
@@ -511,7 +563,66 @@ useSeoMeta({
       </div>
     </section>
 
-    <!-- Section 2: Contact & Support CTA -->
+    <!-- Section 2: 6 Menu Services Navigation (ให้เห็นทั้ง 6 อันด้วยกัน ไม่ใหญ่มาก) -->
+    <section class="py-12 sm:py-16 bg-slate-50/70 border-b border-slate-200/80 text-left">
+      <div class="wrap">
+        
+        <!-- Section Header -->
+        <div class="text-center max-w-2xl mx-auto mb-8 sm:mb-10">
+          <span class="inline-block px-3 py-1 rounded-full bg-emerald-100 text-[#16834A] text-xs font-heading font-bold uppercase tracking-wider mb-2">
+            iGenQ Navigation
+          </span>
+          <h2 class="text-xl sm:text-3xl font-extrabold font-heading text-[#171717] tracking-tight">
+            ศูนย์ข้อมูลและบริการ <span class="text-[#16834A]">iGenQ</span>
+          </h2>
+          <p class="mt-1.5 text-slate-500 text-xs sm:text-sm">
+            เลือกดูข้อมูลผลิตภัณฑ์ ผลงาน คู่มือ และบริการที่เกี่ยวข้องทั้งหมด 6 ด้าน
+          </p>
+        </div>
+
+        <!-- 6 Cards Grid (Desktop shows all 6 together in 1 row) -->
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4">
+          <component
+            :is="item.external ? 'a' : 'NuxtLink'"
+            v-for="item in menuItems"
+            :key="item.id"
+            :href="item.external ? item.to : undefined"
+            :to="!item.external ? item.to : undefined"
+            :target="item.external ? '_blank' : undefined"
+            class="group rounded-2xl border border-slate-200/90 bg-white p-3 sm:p-4 text-center shadow-xs hover:shadow-lg transition-all duration-300 hover:border-[#16834A] hover:-translate-y-1 flex flex-col items-center justify-between cursor-pointer"
+          >
+            <!-- Teardrop Pin Icon Image -->
+            <div class="relative w-20 h-20 sm:w-24 sm:h-24 mx-auto flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
+              <img
+                :src="item.image"
+                :alt="item.title"
+                class="w-full h-full object-contain drop-shadow-xs"
+                loading="lazy"
+              />
+            </div>
+
+            <!-- Title & Subtitle -->
+            <div class="mt-2.5 w-full">
+              <h3 class="text-xs sm:text-sm font-bold font-heading text-[#171717] group-hover:text-[#16834A] transition-colors leading-snug">
+                {{ item.title }}
+              </h3>
+              <p class="text-[11px] text-slate-400 mt-0.5 line-clamp-1">
+                {{ item.sub }}
+              </p>
+            </div>
+
+            <!-- Arrow hint -->
+            <div class="mt-2 pt-2 border-t border-slate-100 w-full flex items-center justify-center gap-1 text-[11px] font-semibold text-slate-400 group-hover:text-[#16834A] transition-colors">
+              <span>เข้าสู่เมนู</span>
+              <span class="transition-transform group-hover:translate-x-0.5">→</span>
+            </div>
+          </component>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Section 3: Contact & Support CTA -->
     <section class="py-16 sm:py-20 bg-gradient-to-b from-white to-slate-100 border-t border-slate-200 text-center">
       <div class="wrap max-w-4xl mx-auto">
         <span class="inline-block px-3 py-1 rounded-full bg-[#16834A]/10 text-[#16834A] text-xs font-heading font-bold uppercase tracking-wider mb-3">
