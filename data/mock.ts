@@ -192,6 +192,7 @@ export const products: Product[] = [
         title: 'HR.ai แพลตฟอร์มบริหารทรัพยากรมนุษย์อัจฉริยะ (HRM • HRD • OD)',
         image: '/images/products/hr-ai/hraicloud-overview.jpg',
         caption: 'HR.ai เป็นระบบบริหารจัดการทรัพยากรบุคคลที่ช่วยให้องค์กรจัดการข้อมูลพนักงาน พัฒนาบุคลากร และวางแผนพัฒนาองค์กรได้อย่างเป็นระบบ โดยแบ่งการทำงานออกเป็น 3 ส่วนหลัก ได้แก่ HRM, HRD และ OD',
+        link: '/products/hr-ai-overview',
       },
       {
         title: 'รางวัล The Winner — OIIO Thailand Techland 2019',
