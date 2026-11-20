@@ -318,6 +318,52 @@ useSeoMeta({
       </div>
     </section>
 
+    <!-- 3 Core Pillars Section (e.g. HRM, HRD, OD for HR.ai) -->
+    <section v-if="product.pillars && product.pillars.length" class="py-16 sm:py-24 bg-white border-b border-slate-200/80">
+      <div class="wrap text-left">
+        <div class="max-w-3xl mb-12">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#16834A]/10 text-[#16834A] text-xs font-heading font-bold uppercase tracking-wider mb-3">
+            <span>3 CORE PILLARS</span>
+          </div>
+          <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold font-heading text-[#171717] tracking-tight">
+            {{ product.pillarsTitle || 'การแบ่งการทำงานออกเป็น 3 ส่วนหลัก' }}
+          </h2>
+          <p class="mt-2 text-sm sm:text-base text-slate-500">
+            {{ product.pillarsDescription || 'ครอบคลุมครบวงจรทุกมิติการบริหารจัดการทรัพยากรมนุษย์ในองค์กรยุคใหม่' }}
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+          <div
+            v-for="(pillar, pIdx) in product.pillars"
+            :key="pIdx"
+            class="group p-6 sm:p-8 rounded-3xl bg-slate-50/80 border border-slate-200/80 hover:border-[#16834A]/40 hover:bg-white hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
+          >
+            <div>
+              <div class="flex items-center justify-between mb-5">
+                <span
+                  class="flex h-11 w-11 items-center justify-center rounded-2xl font-bold font-heading text-sm shadow-sm"
+                  :class="pillar.badgeClass || 'bg-emerald-500 text-white'"
+                >
+                  {{ pillar.code || ('0' + (pIdx + 1)) }}
+                </span>
+                <span class="text-xs font-bold text-slate-400 font-heading">ส่วนที่ {{ pIdx + 1 }}</span>
+              </div>
+              <h3 class="font-heading font-bold text-lg sm:text-xl text-[#171717] mb-3 group-hover:text-[#16834A] transition-colors leading-snug">
+                {{ pillar.title }}
+              </h3>
+              <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
+                {{ pillar.description }}
+              </p>
+            </div>
+            <div v-if="pillar.badge" class="mt-5 pt-4 border-t border-slate-200/60 text-xs font-semibold text-[#16834A]">
+              {{ pillar.badge }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Role-Based Features: Admin vs Attendees -->
     <section v-if="product.adminFeatures || product.userFeatures" class="py-16 sm:py-24 bg-white border-b border-slate-200/80">
       <div class="wrap">
@@ -519,6 +565,19 @@ useSeoMeta({
           </NuxtLink>
         </div>
 
+      </div>
+    </section>
+
+    <!-- Custom Closing Summary Section -->
+    <section v-if="product.closingSummary" class="py-14 sm:py-20 bg-gradient-to-r from-emerald-50/70 via-slate-50 to-emerald-50/70 border-t border-slate-200/80">
+      <div class="wrap text-center max-w-4xl">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#16834A]/10 text-[#16834A] text-xs font-heading font-bold uppercase tracking-wider mb-4 border border-emerald-200/60">
+          <span class="w-2 h-2 rounded-full bg-[#16834A]"></span>
+          <span>ข้อความสรุปท้ายระบบ</span>
+        </div>
+        <p class="text-base sm:text-2xl font-heading font-bold text-[#171717] leading-relaxed">
+          "{{ product.closingSummary }}"
+        </p>
       </div>
     </section>
 
